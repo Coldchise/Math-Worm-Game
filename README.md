@@ -15,10 +15,10 @@ This repository also serves as a record of who contributed what to the project v
 ## License
 
 This project is licensed under the **MIT License**.  
-See the [`LICENSE`](LICENSE) file for full details.[web:168][web:198]
+See the [`LICENSE`](LICENSE) file for full details.
 
 ---
 
 ## Changelog
 
-See [`CHANGELOG.md`](CHANGELOG.md) for a more detailed list of changes over time.[web:183]
+See [`CHANGELOG.md`](CHANGELOG.md) for a more detailed list of changes over time.
