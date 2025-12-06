@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Math Worm 1"
+config/name="Math-Worm-Game"
 run/main_scene="uid://r18n1ru58r3b"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
