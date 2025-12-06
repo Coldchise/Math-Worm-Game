@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bjpjwirekm3hv"]
+
+[node name="BottomUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -354.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.0036907, 1)
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 355.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 468.0
+offset_right = 1256.0
+offset_bottom = 334.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 778.0
+offset_bottom = 323.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.39607844, 0.13725491, 0, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 468.0
+offset_bottom = 334.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect"]
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 323.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.39607844, 0.13725491, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 150.333
+offset_bottom = 156.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 146.0
+offset_right = 296.333
+offset_bottom = 156.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer2"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 293.0
+offset_right = 443.333
+offset_bottom = 156.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer3"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_top = 156.5
+offset_right = 150.333
+offset_bottom = 313.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer4"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 156.5
+offset_right = 296.333
+offset_bottom = 313.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer5"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer6" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 156.5
+offset_right = 443.333
+offset_bottom = 313.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer6"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)

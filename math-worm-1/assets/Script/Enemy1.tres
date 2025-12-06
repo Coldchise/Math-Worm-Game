@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dxn8oxhtxr43q"]
+
+[ext_resource type="Script" uid="uid://cul4uhrreoa78" path="res://assets/Script/BaseEnemy.gd" id="1_7r5le"]
+[ext_resource type="Texture2D" uid="uid://c2811ewjrskek" path="res://assets/bookworm asset/enemy_e02.png" id="2_qoddq"]
+
+[resource]
+script = ExtResource("1_7r5le")
+texture = ExtResource("2_qoddq")
+health = 45
+damage = 5

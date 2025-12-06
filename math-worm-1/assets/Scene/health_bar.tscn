@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://jjecx1w3eiw"]
+
+[ext_resource type="Texture2D" uid="uid://c5es5njalm4jd" path="res://assets/HEALTH METERS/health meter-06.png" id="1_kdjhy"]
+[ext_resource type="Texture2D" uid="uid://d27x2ms5t11xo" path="res://assets/HEALTH METERS/health meter-12.png" id="2_srckl"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("1_kdjhy")
+texture_progress = ExtResource("2_srckl")
+texture_progress_offset = Vector2(84, 44)
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 45.0
+offset_right = 71.0
+offset_bottom = 68.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 21
+text = "0"
+horizontal_alignment = 1

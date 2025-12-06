@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://or3i5hdyt7bv"]
+
+[ext_resource type="Script" uid="uid://bo0j1h5tvkvls" path="res://assets/Script/fireball.gd" id="1_lk87q"]
+[ext_resource type="Texture2D" uid="uid://dfcmenhcgo1g7" path="res://assets/Fireball/4.png" id="1_m4vqi"]
+[ext_resource type="Texture2D" uid="uid://tapgsjed35ha" path="res://assets/Fireball/5.png" id="2_lk87q"]
+[ext_resource type="Texture2D" uid="uid://crxtuiq8kqvqf" path="res://assets/Fireball/6.png" id="3_gveuj"]
+[ext_resource type="Texture2D" uid="uid://6n6pshnaliph" path="res://assets/Fireball/7.png" id="4_smijy"]
+[ext_resource type="Texture2D" uid="uid://vc6qc07pgvy1" path="res://assets/Fireball/8.png" id="5_l1q1f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cr5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m4vqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lk87q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gveuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_smijy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l1q1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_lk87q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 4)
+sprite_frames = SubResource("SpriteFrames_2cr5o")
+autoplay = "default"
+frame_progress = 0.30680385
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-93, -149, 69, -146, 72, -119, 104, -119, 103, -90, 121, -90, 122, -71, 158, -72, 156, 60, 122, 61, 122, 91, 122, 91, 107, 95, 108, 125, 76, 128, 73, 149, -91, 143, -93, 128, -109, 128, -104, 92, -137, 91, -140, 57, -154, 53, -152, -46, -134, -43, -139, -80, -106, -79, -106, -116, -94, -117)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

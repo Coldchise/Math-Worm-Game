@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://0rtfy73niwsg"]
+
+[ext_resource type="Texture2D" uid="uid://rlcpdkycuyse" path="res://assets/Character Sprites/1st.png" id="1_uvl38"]
+[ext_resource type="Texture2D" uid="uid://bulurip5g1s31" path="res://assets/Character Sprites/2nd.png" id="2_2q423"]
+[ext_resource type="Texture2D" uid="uid://be0g1bsnlhp1j" path="res://assets/Character Sprites/3rd.png" id="3_8yqgs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jw0ju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uvl38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2q423")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8yqgs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvl38"]
+size = Vector2(60.585644, 72.287445)
+
+[node name="MainCharacter" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.536)
+sprite_frames = SubResource("SpriteFrames_jw0ju")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.0000005, -14.5679865)
+scale = Vector2(2.3437896, 2.7271123)
+shape = SubResource("RectangleShape2D_uvl38")

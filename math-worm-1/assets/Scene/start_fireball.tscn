@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2on8gkcc3i7v"]
+
+[ext_resource type="Texture2D" uid="uid://b7aqgtujvb6ec" path="res://assets/Fireball/1.PNG" id="1_obsyh"]
+[ext_resource type="Texture2D" uid="uid://dijs4sdjgtl0s" path="res://assets/Fireball/2.PNG" id="2_u6jpj"]
+[ext_resource type="Texture2D" uid="uid://bouybyaswakk8" path="res://assets/Fireball/3.PNG" id="3_oig3h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_805qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_obsyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u6jpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oig3h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd3nt"]
+
+[node name="StartFireball" type="CharacterBody2D"]
+
+[node name="Splash" type="AnimatedSprite2D" parent="."]
+rotation = -3.1415927
+sprite_frames = SubResource("SpriteFrames_805qj")
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bd3nt")

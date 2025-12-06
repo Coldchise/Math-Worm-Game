@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://h7uy6s708jpx"]
+
+[ext_resource type="Texture2D" path="res://Ant1.png" id="2_7frs8"]
+[ext_resource type="Texture2D" path="res://Ant2.png" id="3_l60bx"]
+[ext_resource type="Texture2D" path="res://Ant3.png" id="4_6ickm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c734n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7frs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l60bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ickm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Enemy1" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(38.359386, 65.70308)
+scale = Vector2(0.2944431, 0.29959634)
+sprite_frames = SubResource("SpriteFrames_c734n")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(38.359386, 65.70308)
+scale = Vector2(0.2944431, 0.2995963)
+polygon = PackedVector2Array(-425, -782, -303, -870, -55, -638, 271, -895, 422, -848, 275, -563, 413, -230, 548, 84, 322, 529, 394, 824, -215, 846, -535, 793, -425, 190, -237, 34, -234, -334)

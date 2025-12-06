@@ -1,0 +1,220 @@
+[gd_scene load_steps=6 format=3 uid="uid://r18n1ru58r3b"]
+
+[ext_resource type="Texture2D" uid="uid://cu0u80jxd5fyb" path="res://assets/bookworm asset/background_2.jpg" id="1_5joda"]
+[ext_resource type="Script" uid="uid://l2cuveaacwg4" path="res://battle_scene.gd" id="1_gf131"]
+[ext_resource type="PackedScene" uid="uid://b4amqaja3m83s" path="res://enemy1.tscn" id="2_gf131"]
+[ext_resource type="PackedScene" uid="uid://0rtfy73niwsg" path="res://main_character.tscn" id="3_sl17i"]
+[ext_resource type="PackedScene" uid="uid://0p2jdak37jea" path="res://key_pad.tscn" id="4_x5h4l"]
+
+[node name="battlescene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gf131")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="UpperUI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UpperUI"]
+layout_mode = 2
+texture = ExtResource("1_5joda")
+
+[node name="Enemy1" parent="UpperUI" instance=ExtResource("2_gf131")]
+position = Vector2(335.99997, 213)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy2" parent="UpperUI" instance=ExtResource("2_gf131")]
+position = Vector2(151, 219.00006)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy3" parent="UpperUI" instance=ExtResource("2_gf131")]
+position = Vector2(224, 280)
+scale = Vector2(0.4, 0.4)
+
+[node name="MainCharacter" parent="UpperUI" instance=ExtResource("3_sl17i")]
+position = Vector2(1268, 241)
+
+[node name="ButtomUI" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI"]
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtomUI/ColorRect"]
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 355.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 468.0
+offset_right = 1256.0
+offset_bottom = 334.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 778.0
+offset_bottom = 323.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.39607844, 0.13725491, 0, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 468.0
+offset_bottom = 334.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect"]
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 323.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.39607844, 0.13725491, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 150.333
+offset_bottom = 156.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 146.0
+offset_right = 296.333
+offset_bottom = 156.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer2"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer3" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 293.0
+offset_right = 443.333
+offset_bottom = 156.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer3"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_top = 156.5
+offset_right = 150.333
+offset_bottom = 313.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer4"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer5" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 156.5
+offset_right = 296.333
+offset_bottom = 313.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer5"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer6" type="MarginContainer" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 156.5
+offset_right = 443.333
+offset_bottom = 313.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="ButtomUI/ColorRect/MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/ColorRect/MarginContainer6"]
+layout_mode = 2
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="KeyPad" parent="." instance=ExtResource("4_x5h4l")]
+layout_mode = 1

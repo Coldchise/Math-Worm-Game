@@ -1,0 +1,390 @@
+[gd_scene load_steps=10 format=3 uid="uid://0p2jdak37jea"]
+
+[ext_resource type="Script" uid="uid://4s6mct51lp8x" path="res://assets/Script/key_pad.gd" id="1_yatoq"]
+[ext_resource type="Texture2D" path="res://battleSceneButton.png" id="2_rgscy"]
+[ext_resource type="FontFile" uid="uid://cfhyd5hmym1s4" path="res://assets/font/Kenney Pixel.ttf" id="2_vry2g"]
+[ext_resource type="Texture2D" path="res://clickedButton.png" id="3_vry2g"]
+[ext_resource type="Texture2D" path="res://selection button.png" id="6_71sse"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yatoq"]
+texture = ExtResource("2_rgscy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgscy"]
+texture = ExtResource("3_vry2g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vry2g"]
+texture = ExtResource("3_vry2g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uuy34"]
+texture = ExtResource("6_71sse")
+
+[node name="KeyPad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yatoq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -615.0
+offset_top = 538.0
+offset_right = -181.0
+offset_bottom = 689.0
+grow_horizontal = 2
+size_flags_vertical = 3
+color = Color(0.4862745, 0.25490198, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = -21.0
+offset_right = 78.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Numbers" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 397.0
+offset_right = 1072.0
+offset_bottom = 683.0
+columns = 6
+
+[node name="button1" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "1"
+
+[node name="button2" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "2"
+
+[node name="button3" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "3"
+
+[node name="buttonSquareRoot" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "√"
+
+[node name="buttonplus" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "+"
+
+[node name="Backspace" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "⌫"
+
+[node name="button4" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "4"
+
+[node name="button5" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "5"
+
+[node name="button6" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "6"
+
+[node name="button0" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "0"
+
+[node name="buttonminus" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "-"
+
+[node name="buttondivide" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "÷"
+
+[node name="button7" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "7"
+
+[node name="button8" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "8"
+
+[node name="button9" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "9"
+
+[node name="dot" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "."
+
+[node name="buttonmultiply" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "×"
+
+[node name="C" type="Button" parent="Numbers"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "C"
+
+[node name="Selection" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1087.0
+offset_top = 423.0
+offset_right = 1250.0
+offset_bottom = 473.0
+
+[node name="numberselection" type="Button" parent="Selection"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_uuy34")
+text = "1"
+
+[node name="letterselection" type="Button" parent="Selection"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_uuy34")
+text = "2"
+
+[node name="Letters" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 397.0
+offset_right = 1072.0
+offset_bottom = 683.0
+columns = 6
+
+[node name="openparenthesis" type="Button" parent="Letters"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "("
+
+[node name="closeparenthesis" type="Button" parent="Letters"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = ")"
+
+[node name="x" type="Button" parent="Letters"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "x"
+
+[node name="y" type="Button" parent="Letters"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "y"
+
+[node name="z" type="Button" parent="Letters"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "z"
+
+[node name="Backspace" type="Button" parent="Letters"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/font = ExtResource("2_vry2g")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_yatoq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgscy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vry2g")
+text = "⌫"
+
+[connection signal="pressed" from="Numbers/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Numbers/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Numbers/button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Numbers/buttonSquareRoot" to="." method="_on_button_square_root_pressed"]
+[connection signal="pressed" from="Numbers/buttonplus" to="." method="_on_buttonplus_pressed"]
+[connection signal="pressed" from="Numbers/Backspace" to="." method="_on_backspace_pressed"]
+[connection signal="pressed" from="Numbers/button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Numbers/button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Numbers/button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Numbers/button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="Numbers/buttonminus" to="." method="_on_buttonminus_pressed"]
+[connection signal="pressed" from="Numbers/buttondivide" to="." method="_on_buttondivide_pressed"]
+[connection signal="pressed" from="Numbers/button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Numbers/button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Numbers/button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Numbers/dot" to="." method="_on_dot_pressed"]
+[connection signal="pressed" from="Numbers/buttonmultiply" to="." method="_on_buttonmultiply_pressed"]
+[connection signal="pressed" from="Numbers/C" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="Selection/numberselection" to="." method="_on_numberselection_pressed"]
+[connection signal="pressed" from="Selection/letterselection" to="." method="_on_letterselection_pressed"]
+[connection signal="pressed" from="Letters/openparenthesis" to="." method="_on_openparenthesis_pressed"]
+[connection signal="pressed" from="Letters/closeparenthesis" to="." method="_on_closeparenthesis_pressed"]
+[connection signal="pressed" from="Letters/x" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="Letters/y" to="." method="_on_y_pressed"]
+[connection signal="pressed" from="Letters/z" to="." method="_on_z_pressed"]
+[connection signal="pressed" from="Letters/Backspace" to="." method="_on_backspace_pressed"]
