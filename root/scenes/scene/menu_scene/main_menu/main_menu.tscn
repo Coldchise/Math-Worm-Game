@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=3 uid="uid://b88kuy67g4l8f"]
+
+[ext_resource type="Script" uid="uid://bfr1jpneg2tf3" path="res://root/scenes/scene/menu_scene/main_menu/main_menu.gd" id="1_j1c5u"]
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="3_jhg6y"]
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="3_u405l"]
+[ext_resource type="PackedScene" uid="uid://cqg5p86vdf7ea" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_node.tscn" id="4_0aswu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_j1c5u")
+
+[node name="RootMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FooterMarginContainer" type="MarginContainer" parent="RootMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="FooterHBoxContainer" type="HBoxContainer" parent="RootMarginContainer/FooterMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AuthorLabel" type="Label" parent="RootMarginContainer/FooterMarginContainer/FooterHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+localize_numeral_system = false
+theme_override_font_sizes/font_size = 16
+vertical_alignment = 1
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="RootMarginContainer/FooterMarginContainer/FooterHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="VersionLabel" type="Label" parent="RootMarginContainer/FooterMarginContainer/FooterHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+localize_numeral_system = false
+theme_override_font_sizes/font_size = 16
+text = "v1.0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="RootMarginContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="RootMarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MainMenuMarginContainer" type="MarginContainer" parent="RootMarginContainer/AspectRatioContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 48
+
+[node name="MainMenuVBoxContainer" type="VBoxContainer" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MainMenuLabelsVBoxContainer" type="VBoxContainer" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TitleLabel" type="Label" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuLabelsVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Math Worm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SeparationMarginContainer" type="MarginContainer" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuLabelsVBoxContainer"]
+layout_mode = 2
+
+[node name="MainMenuButtonsVBoxContainer" type="VBoxContainer" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="PlayMenuButton" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("3_u405l")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "       Play       "
+label = "MENU_LABEL_PLAY"
+
+[node name="OptionsMenuButton" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("3_u405l")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "       Options       "
+label = "MENU_OPTIONS"
+
+[node name="CreditsMenuButton" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("3_u405l")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "       Credits       "
+label = "MENU_LABEL_CREDITS"
+
+[node name="QuitMenuButton" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("3_u405l")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "       Quit       "
+label = "MENU_LABEL_QUIT"
+
+[node name="ControlGrabFocus" parent="RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("3_jhg6y")]
+
+[node name="HeaderMarginContainer" type="MarginContainer" parent="RootMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HeaderBoxContainer" type="HBoxContainer" parent="RootMarginContainer/HeaderMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="RootMarginContainer/HeaderMarginContainer/HeaderBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="MenuDropdownNode" parent="RootMarginContainer/HeaderMarginContainer/HeaderBoxContainer" instance=ExtResource("4_0aswu")]
+layout_mode = 2
+list_cfg = 8

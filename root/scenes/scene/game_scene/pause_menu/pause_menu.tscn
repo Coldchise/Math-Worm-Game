@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo52utxeld0r0"]
+
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="1_krneb"]
+[ext_resource type="Script" uid="uid://3urf76et05ff" path="res://root/scenes/scene/game_scene/pause_menu/pause_menu.gd" id="1_nxviq"]
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="2_4br2w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e53e6"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nxviq")
+
+[node name="MainMenuMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -154.5
+offset_right = 73.5
+offset_bottom = 154.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SolidPanelMarginContainer" type="MarginContainer" parent="MainMenuMarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="SolidPanel" type="Panel" parent="MainMenuMarginContainer/SolidPanelMarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e53e6")
+
+[node name="MainMenuVBoxContainer" type="VBoxContainer" parent="MainMenuMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="MainMenuLabelsVBoxContainer" type="VBoxContainer" parent="MainMenuMarginContainer/MainMenuVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="TitleLabel" type="Label" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuLabelsVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SeparationMarginContainer" type="MarginContainer" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuLabelsVBoxContainer"]
+layout_mode = 2
+
+[node name="MainMenuButtonsVBoxContainer" type="VBoxContainer" parent="MainMenuMarginContainer/MainMenuVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="ContinueMenuButton" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("1_krneb")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../OptionsMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "    Continue    "
+label = "MENU_LABEL_CONTINUE"
+padding_spaces = 4
+
+[node name="OptionsMenuButton" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("1_krneb")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../ContinueMenuButton")
+focus_neighbor_bottom = NodePath("../LeaveMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "    Options    "
+label = "MENU_OPTIONS"
+padding_spaces = 4
+
+[node name="LeaveMenuButton" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("1_krneb")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsMenuButton")
+focus_neighbor_bottom = NodePath("../QuitMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "    Leave    "
+label = "MENU_LABEL_LEAVE"
+padding_spaces = 4
+
+[node name="QuitMenuButton" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("1_krneb")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../LeaveMenuButton")
+focus_neighbor_bottom = NodePath(".")
+theme_override_font_sizes/font_size = 24
+text = "    Quit    "
+label = "MENU_LABEL_QUIT"
+padding_spaces = 4
+
+[node name="ControlGrabFocus" parent="MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" instance=ExtResource("2_4br2w")]

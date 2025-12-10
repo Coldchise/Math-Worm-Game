@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1qehwioaldlb"]
+
+[ext_resource type="PackedScene" uid="uid://byy8027e326wd" path="res://root/scenes/scene/game_scene/game_content/game_button/game_button.tscn" id="1_l5ghq"]
+[ext_resource type="Script" uid="uid://c5e23i8a611eb" path="res://root/scenes/scene/game_scene/game_content/game_content.gd" id="1_qs7kg"]
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="2_mc8mw"]
+[ext_resource type="PackedScene" uid="uid://cle6b4qe3nss5" path="res://root/scenes/scene/game_scene/game_content/coins_counter/coins_counter.tscn" id="3_57dmj"]
+[ext_resource type="PackedScene" uid="uid://dnxbwrgcubbx0" path="res://root/scenes/scene/game_scene/game_content/clicks_counter/clicks_counter.tscn" id="4_tvsdi"]
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="5_kng2e"]
+
+[node name="GameContent" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qs7kg")
+
+[node name="CenterMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -128.5
+offset_right = 152.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameButton" parent="CenterMarginContainer" instance=ExtResource("1_l5ghq")]
+layout_mode = 2
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("../../PauseMarginContainer/PauseMenuButton")
+focus_neighbor_right = NodePath("../../PauseMarginContainer/PauseMenuButton")
+focus_neighbor_bottom = NodePath("")
+
+[node name="ControlGrabFocus" parent="CenterMarginContainer" instance=ExtResource("2_mc8mw")]
+unique_name_in_owner = true
+
+[node name="TopMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_right = 84.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="CoinsCounter" parent="TopMarginContainer" instance=ExtResource("3_57dmj")]
+layout_mode = 2
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -102.0
+offset_right = 114.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="ClicksCounter" parent="BottomMarginContainer" instance=ExtResource("4_tvsdi")]
+layout_mode = 2
+
+[node name="PauseMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PauseMenuButton" parent="PauseMarginContainer" instance=ExtResource("5_kng2e")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../CenterMarginContainer/GameButton")
+focus_neighbor_bottom = NodePath("../../CenterMarginContainer/GameButton")
+theme_override_font_sizes/font_size = 24
+text = " Pause "
+label = "MENU_LABEL_PAUSE"
+padding_spaces = 1

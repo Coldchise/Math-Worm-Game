@@ -1,0 +1,24 @@
+{
+  "hidden_columns": {
+    "res://resources/preload/scene_manager_options/tres/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
+    "res://resources/scene_manager_options/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    }
+  },
+  "recent_paths": [
+    "res://resources/scene_manager_options/",
+    "res://resources/preload/scene_manager_options/tres/"
+  ],
+  "table_functions": {
+    "filter": [
+      "return true"
+    ],
+    "process": [
+      "return value"
+    ]
+  }
+}

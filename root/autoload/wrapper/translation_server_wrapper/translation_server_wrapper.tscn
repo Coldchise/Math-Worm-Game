@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyhenvux5egan"]
+
+[ext_resource type="Script" uid="uid://d12kx4g61nxdo" path="res://root/autoload/wrapper/translation_server_wrapper/translation_server_wrapper.gd" id="1_jtu1h"]
+
+[node name="TranslationServerWrapper" type="Node"]
+script = ExtResource("1_jtu1h")

@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6f713ef85lcj"]
+
+[ext_resource type="Script" uid="uid://k866n7lfw1hf" path="res://root/scenes/scene/menu_scene/save_files_menu/save_files_menu.gd" id="1_e3gbg"]
+[ext_resource type="PackedScene" uid="uid://boueadrfx15jl" path="res://root/scenes/scene/menu_scene/save_files_menu/menu_save_file/menu_save_file.tscn" id="3_50r0p"]
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="3_eqnf7"]
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="4_3rsfr"]
+[ext_resource type="PackedScene" uid="uid://blj2ibtiuk6nf" path="res://root/scenes/scene/menu_scene/save_files_menu/menu_textbox_dialog/menu_textbox_dialog.tscn" id="6_jkppb"]
+
+[node name="SaveFilesMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_e3gbg")
+menu_save_file_pck = ExtResource("3_50r0p")
+
+[node name="RootMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="RootMarginContainer"]
+z_index = -4096
+layout_mode = 2
+
+[node name="RootVBoxContainer" type="VBoxContainer" parent="RootMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="RootMarginContainer/RootVBoxContainer"]
+layout_mode = 2
+
+[node name="SaveFilesMenuScrollContainer" type="ScrollContainer" parent="RootMarginContainer/RootVBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="SaveFilesMenuMarginContainer" type="MarginContainer" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer"]
+custom_minimum_size = Vector2(666, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="SaveFilesMarginContainer" type="MarginContainer" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer/SaveFilesMenuMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SaveFilesVBoxContainer" type="VBoxContainer" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer/SaveFilesMenuMarginContainer/SaveFilesMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="MenuSaveFile1" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer/SaveFilesMenuMarginContainer/SaveFilesMarginContainer/SaveFilesVBoxContainer" instance=ExtResource("3_50r0p")]
+layout_mode = 2
+
+[node name="MenuSaveFile2" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer/SaveFilesMenuMarginContainer/SaveFilesMarginContainer/SaveFilesVBoxContainer" instance=ExtResource("3_50r0p")]
+layout_mode = 2
+
+[node name="MenuSaveFile3" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer/SaveFilesMenuMarginContainer/SaveFilesMarginContainer/SaveFilesVBoxContainer" instance=ExtResource("3_50r0p")]
+layout_mode = 2
+
+[node name="ControlGrabFocus" parent="RootMarginContainer/RootVBoxContainer/SaveFilesMenuScrollContainer/SaveFilesMenuMarginContainer/SaveFilesMarginContainer/SaveFilesVBoxContainer" instance=ExtResource("4_3rsfr")]
+unique_name_in_owner = true
+recursive = true
+manual = true
+
+[node name="FooterHSeparator" type="HSeparator" parent="RootMarginContainer/RootVBoxContainer"]
+layout_mode = 2
+
+[node name="FooterMarginContainer" type="MarginContainer" parent="RootMarginContainer/RootVBoxContainer"]
+custom_minimum_size = Vector2(666, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RootMarginContainer/RootVBoxContainer/FooterMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BackMenuButton" parent="RootMarginContainer/RootVBoxContainer/FooterMarginContainer/HBoxContainer" instance=ExtResource("3_eqnf7")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "       Back       "
+label = "MENU_LABEL_BACK"
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="RootMarginContainer/RootVBoxContainer/FooterMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuTextboxDialog" parent="." instance=ExtResource("6_jkppb")]
+unique_name_in_owner = true

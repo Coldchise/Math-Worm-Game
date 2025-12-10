@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=3 uid="uid://bea1npdsg7ii1"]
+
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="2_bpco6"]
+[ext_resource type="Script" uid="uid://blab0apyqrw8w" path="res://root/scenes/scene/menu_scene/options_menu/options_menu.gd" id="2_jd1v2"]
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="4_m78wu"]
+[ext_resource type="PackedScene" uid="uid://pd1a3fwjkrdl" path="res://root/scenes/scene/menu_scene/options_menu/options_container/audio_options/audio_options.tscn" id="5_kiw17"]
+[ext_resource type="PackedScene" uid="uid://dxl20qx51clia" path="res://root/scenes/scene/menu_scene/options_menu/options_container/video_options/video_options.tscn" id="6_balw6"]
+[ext_resource type="PackedScene" uid="uid://c2owjxrhgllgx" path="res://root/scenes/scene/menu_scene/options_menu/options_container/controls_options/controls_options.tscn" id="7_pspmp"]
+[ext_resource type="PackedScene" uid="uid://s26ypj4otfru" path="res://root/scenes/scene/menu_scene/options_menu/options_container/game_options/game_options.tscn" id="8_t3ua6"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_jd1v2")
+
+[node name="RootMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="RootMarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RootMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TabMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(666, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="TabHBoxContainer" type="HBoxContainer" parent="RootMarginContainer/VBoxContainer/TabMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AudioMenuButton" parent="RootMarginContainer/VBoxContainer/TabMarginContainer/TabHBoxContainer" instance=ExtResource("4_m78wu")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../../FooterMarginContainer/HBoxContainer/ResetMenuButton")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+button_pressed = true
+text = "   Audio   "
+label = "MENU_LABEL_AUDIO"
+padding_spaces = 3
+
+[node name="VideoMenuButton" parent="RootMarginContainer/VBoxContainer/TabMarginContainer/TabHBoxContainer" instance=ExtResource("4_m78wu")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "   Video   "
+label = "MENU_LABEL_VIDEO"
+padding_spaces = 3
+
+[node name="ControlsMenuButton" parent="RootMarginContainer/VBoxContainer/TabMarginContainer/TabHBoxContainer" instance=ExtResource("4_m78wu")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "   Controls   "
+label = "MENU_OPTIONS_CONTROLS"
+padding_spaces = 3
+
+[node name="GameMenuButton" parent="RootMarginContainer/VBoxContainer/TabMarginContainer/TabHBoxContainer" instance=ExtResource("4_m78wu")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../../../FooterMarginContainer/HBoxContainer/BackMenuButton")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "   Game   "
+label = "CREDITS_GAME"
+padding_spaces = 3
+
+[node name="ControlGrabFocus" parent="RootMarginContainer/VBoxContainer/TabMarginContainer/TabHBoxContainer" instance=ExtResource("2_bpco6")]
+remember_last_focus = false
+
+[node name="TabHSeparator" type="HSeparator" parent="RootMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(666, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="OptionsVBoxContainer" type="VBoxContainer" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="AudioOptions" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer" instance=ExtResource("5_kiw17")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VideoOptions" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer" instance=ExtResource("6_balw6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ControlsOptions" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer" instance=ExtResource("7_pspmp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="GameOptions" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer" instance=ExtResource("8_t3ua6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="FooterHSeparator" type="HSeparator" parent="RootMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FooterMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(666, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BackMenuButton" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer" instance=ExtResource("4_m78wu")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../TabMarginContainer/TabHBoxContainer/GameMenuButton")
+focus_neighbor_right = NodePath("../ResetMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "       Back       "
+label = "MENU_LABEL_BACK"
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResetMenuButton" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer" instance=ExtResource("4_m78wu")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../BackMenuButton")
+focus_neighbor_right = NodePath("../../../TabMarginContainer/TabHBoxContainer/AudioMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "       Reset       "
+label = "MENU_LABEL_RESET"

@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxl20qx51clia"]
+
+[ext_resource type="Script" uid="uid://2pqhrjeg1tx8" path="res://root/scenes/scene/menu_scene/options_menu/options_container/video_options/video_options.gd" id="1_75uy7"]
+[ext_resource type="PackedScene" uid="uid://cqg5p86vdf7ea" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_node.tscn" id="5_1d2kw"]
+[ext_resource type="PackedScene" uid="uid://caoh5yd0nri0y" path="res://root/scenes/node/menu/menu_configuration/menu_slider_node/menu_slider_node.tscn" id="6_k6s6k"]
+[ext_resource type="PackedScene" uid="uid://cauyngcle8qc1" path="res://root/scenes/node/menu/menu_configuration/menu_toggle_node/menu_toggle_node.tscn" id="7_foqsd"]
+
+[node name="VideoOptions" type="MarginContainer"]
+offset_right = 616.0
+offset_bottom = 232.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_75uy7")
+
+[node name="RootVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Node" type="Node" parent="RootVBoxContainer"]
+
+[node name="DisplayModeMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_1d2kw")]
+layout_mode = 2
+list_cfg = 2
+title = "MENU_OPTIONS_DISPLAY_MODE"
+
+[node name="ResolutionMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_1d2kw")]
+layout_mode = 2
+list_cfg = 4
+title = "MENU_OPTIONS_WINDOW_RESOLUTION"
+
+[node name="WindowScaleMenuSliderNode" parent="RootVBoxContainer" instance=ExtResource("6_k6s6k")]
+layout_mode = 2
+slider_cfg = 4
+title = "MENU_OPTIONS_WINDOW_SCALE"
+value_suffix = "%"
+min_value = 50.0
+max_value = 120.0
+slider_stretch_ratio = 0.75
+
+[node name="DisplayHSeparator" type="HSeparator" parent="RootVBoxContainer"]
+layout_mode = 2
+
+[node name="VsyncModeMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_1d2kw")]
+layout_mode = 2
+list_cfg = 5
+title = "MENU_OPTIONS_VSYNC"
+
+[node name="FPSLimitMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_1d2kw")]
+layout_mode = 2
+list_cfg = 3
+title = "MENU_LABEL_FPS_LIMIT"
+
+[node name="FPSCountMenuToggleNode" parent="RootVBoxContainer" instance=ExtResource("7_foqsd")]
+layout_mode = 2
+toggle_cfg = 2
+title = "MENU_LABEL_FPS_COUNT"
+
+[node name="AntiAliasMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_1d2kw")]
+layout_mode = 2
+list_cfg = 1
+title = "MENU_OPTIONS_ANTI_ALIAS"

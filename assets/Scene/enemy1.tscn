@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://h7uy6s708jpx"]
 
-[ext_resource type="Texture2D" path="res://Ant1.png" id="2_7frs8"]
-[ext_resource type="Texture2D" path="res://Ant2.png" id="3_l60bx"]
-[ext_resource type="Texture2D" path="res://Ant3.png" id="4_6ickm"]
+[ext_resource type="Texture2D" uid="uid://drlsp3r1meteo" path="res://Ant1.png" id="2_7frs8"]
+[ext_resource type="Texture2D" uid="uid://dsts5q1t0nle4" path="res://Ant2.png" id="3_l60bx"]
+[ext_resource type="Texture2D" uid="uid://bdwkivrilq04u" path="res://Ant3.png" id="4_6ickm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c734n"]
 animations = [{

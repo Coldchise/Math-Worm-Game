@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7e31uh5wrmi5"]
+
+[ext_resource type="Script" uid="uid://b8yofrex4dryj" path="res://root/scenes/scene/menu_scene/menu_scene.gd" id="1_tjy2w"]
+[ext_resource type="PackedScene" uid="uid://b88kuy67g4l8f" path="res://root/scenes/scene/menu_scene/main_menu/main_menu.tscn" id="2_8scvs"]
+[ext_resource type="PackedScene" uid="uid://bea1npdsg7ii1" path="res://root/scenes/scene/menu_scene/options_menu/options_menu.tscn" id="3_5uviw"]
+[ext_resource type="PackedScene" uid="uid://cdpe2qrr0gpen" path="res://root/scenes/scene/menu_scene/credits_menu/credits_menu.tscn" id="4_eej08"]
+[ext_resource type="PackedScene" uid="uid://b6f713ef85lcj" path="res://root/scenes/scene/menu_scene/save_files_menu/save_files_menu.tscn" id="5_c65oj"]
+[ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://root/scenes/component/builder/ui_builder/ui_builder.tscn" id="6_p1rvd"]
+
+[node name="MenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjy2w")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_8scvs")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_5uviw")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="CreditsMenu" parent="." instance=ExtResource("4_eej08")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="SaveFilesMenu" parent="." instance=ExtResource("5_c65oj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="UiBuilder" parent="." instance=ExtResource("6_p1rvd")]
+unique_name_in_owner = true

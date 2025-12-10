@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0fv37a4pcx11"]
+
+[ext_resource type="Script" uid="uid://br4ybwqjef0c2" path="res://root/autoload/configuration/configuration_controller/video/fps_count_toggle_cfg/fps_count_toggle_cfg.gd" id="1_0eigb"]
+
+[node name="FpsCountToggleCfg" type="Node"]
+script = ExtResource("1_0eigb")
+config_group = 2
+config_id = "FpsCount"

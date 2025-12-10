@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://t2dui8ppm3a4"]
+
+[ext_resource type="Script" uid="uid://ccy37uo1g0a1c" path="res://root/scenes/scene/menu_scene/credits_menu/credits/credits.gd" id="4"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4")
+scroll_offset = 100.0
+stretch_minimum_size = false
+x_minimum_size = 400.0
+align = "left"
+center_padding = true
+keywords = {
+"Art": "CREDITS_ART",
+"Assets": "CREDITS_ASSETS",
+"Audio": "CREDITS_AUDIO",
+"Contributions": "CREDITS_CONTRIBUTIONS",
+"Credits": "MENU_LABEL_CREDITS",
+"Dependencies": "CREDITS_DEPENDENCIES",
+"Development": "CREDITS_DEVELOPMENT",
+"Font": "CREDITS_FONT",
+"Localization": "CREDITS_LOCALIZATION",
+"Plugins": "CREDITS_PLUGINS",
+"Snippets": "CREDITS_SNIPPETS",
+"Tools": "CREDITS_TOOLS"
+}
+suffix_keywords = {
+"Created by": "CREDITS_CREATED_BY",
+"Credits": "MENU_LABEL_CREDITS",
+"License": "CREDITS_LICENSE",
+"Modified by": "CREDITS_MODIFIED_BY",
+"Source": "CREDITS_SOURCE",
+"Version": "CREDITS_VERSION"
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_vertical = 8
+horizontal_scroll_mode = 0
+
+[node name="RootMarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/RootMarginContainer"]
+layout_mode = 2
+
+[node name="HeaderSpace" type="Control" parent="ScrollContainer/RootMarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 720)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/RootMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="ScrollContainer/RootMarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CreditsLabel" type="RichTextLabel" parent="ScrollContainer/RootMarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[left]asd[/left]
+[left]asd[/left]"
+fit_content = true
+scroll_active = false
+
+[node name="FooterSpace" type="Control" parent="ScrollContainer/RootMarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 720)
+layout_mode = 2
+
+[node name="ScrollResetTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

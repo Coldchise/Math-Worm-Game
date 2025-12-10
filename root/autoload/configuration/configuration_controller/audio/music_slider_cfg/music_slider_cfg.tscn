@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nbbpjwjia4sl"]
+
+[ext_resource type="Script" uid="uid://bbnnhhl4c2g45" path="res://root/autoload/configuration/configuration_controller/audio/music_slider_cfg/music_slider_cfg.gd" id="1_ia7vf"]
+
+[node name="MusicSliderCfg" type="Node"]
+script = ExtResource("1_ia7vf")
+config_group = 1
+config_id = "MusicVolume"

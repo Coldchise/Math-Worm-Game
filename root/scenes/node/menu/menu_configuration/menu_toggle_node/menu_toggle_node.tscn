@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cauyngcle8qc1"]
+
+[ext_resource type="Script" uid="uid://devq2h5is7rqd" path="res://root/scenes/node/menu/menu_configuration/menu_toggle_node/menu_toggle_node.gd" id="1_8chyw"]
+[ext_resource type="PackedScene" uid="uid://d3ewhk7fks8i2" path="res://root/scenes/node/menu/menu_configuration/menu_toggle_node/menu_toggle_ui/menu_toggle_ui.tscn" id="2_ol5po"]
+
+[node name="MenuToggleNode" type="MarginContainer" node_paths=PackedStringArray("menu_toggle_ui")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -25.5
+offset_right = 325.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8chyw")
+menu_toggle_ui = NodePath("MenuToggleUI")
+
+[node name="MenuToggleUI" parent="." instance=ExtResource("2_ol5po")]
+layout_mode = 2
+label_on = "MENU_LABEL_ON"
+label_off = "MENU_LABEL_OFF"

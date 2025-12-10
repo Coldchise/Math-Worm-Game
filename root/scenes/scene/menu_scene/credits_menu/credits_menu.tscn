@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdpe2qrr0gpen"]
+
+[ext_resource type="Script" uid="uid://dya1cm8jgtcjw" path="res://root/scenes/scene/menu_scene/credits_menu/credits_menu.gd" id="1_lim8x"]
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="2_vgi8g"]
+[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://root/scenes/scene/menu_scene/credits_menu/credits/credits.tscn" id="3_b3gxy"]
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="3_k32ri"]
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lim8x")
+
+[node name="RootMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="RootMarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RootMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CreditsMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 8
+
+[node name="Credits" parent="RootMarginContainer/VBoxContainer/CreditsMarginContainer" instance=ExtResource("3_b3gxy")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FooterHSeparator" type="HSeparator" parent="RootMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FooterMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BackMenuButton" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer" instance=ExtResource("2_vgi8g")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "       Back       "
+label = "MENU_LABEL_BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlGrabFocus" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer" instance=ExtResource("3_k32ri")]

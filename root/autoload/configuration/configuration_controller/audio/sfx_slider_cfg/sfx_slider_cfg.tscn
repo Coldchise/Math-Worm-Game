@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wjt1a1yw271k"]
+
+[ext_resource type="Script" uid="uid://vpdxryf2uddq" path="res://root/autoload/configuration/configuration_controller/audio/sfx_slider_cfg/sfx_slider_cfg.gd" id="1_ncwll"]
+
+[node name="SfxSliderCfg" type="Node"]
+script = ExtResource("1_ncwll")
+config_group = 1
+config_id = "SFXVolume"

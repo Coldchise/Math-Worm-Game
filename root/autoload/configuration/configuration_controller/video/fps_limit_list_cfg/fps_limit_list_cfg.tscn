@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs5es1chsqnxh"]
+
+[ext_resource type="Script" uid="uid://dm31dtgxh3lil" path="res://root/autoload/configuration/configuration_controller/video/fps_limit_list_cfg/fps_limit_list_cfg.gd" id="1_ngt85"]
+
+[node name="FpsLimitListCfg" type="Node"]
+script = ExtResource("1_ngt85")
+config_group = 2
+config_id = "FpsLimit"

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnxbwrgcubbx0"]
+
+[ext_resource type="Script" uid="uid://0ya1pjfhg025" path="res://root/scenes/scene/game_scene/game_content/clicks_counter/clicks_counter.gd" id="1_m022q"]
+[ext_resource type="PackedScene" uid="uid://bif8wd4q6rxty" path="res://root/scenes/component/motion/scale_motion/scale_motion.tscn" id="2_ts4um"]
+
+[node name="ClicksCounterVBoxContainer" type="VBoxContainer"]
+theme_override_constants/separation = -16
+script = ExtResource("1_m022q")
+
+[node name="ClicksCounterTitleLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Clicks Per Second"
+horizontal_alignment = 1
+
+[node name="ClicksCounterValueLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="ScaleMotion" parent="." instance=ExtResource("2_ts4um")]
+unique_name_in_owner = true

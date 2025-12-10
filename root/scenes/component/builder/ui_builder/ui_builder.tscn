@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvaa73qxuiw6n"]
+
+[ext_resource type="Script" uid="uid://5vo4jjv1u6ht" path="res://root/scenes/component/builder/ui_builder/ui_builder.gd" id="1_il71x"]
+[ext_resource type="PackedScene" uid="uid://dln7v3di35hes" path="res://root/scenes/component/motion/twist_motion/twist_motion.tscn" id="2_l26uk"]
+[ext_resource type="PackedScene" uid="uid://bibugy76yn74c" path="res://root/scenes/component/control/control_focus_on_hover/control_focus_on_hover.tscn" id="3_d3bwu"]
+
+[node name="UiBuilder" type="Node"]
+script = ExtResource("1_il71x")
+twist_component = ExtResource("2_l26uk")
+control_focus_on_hover = ExtResource("3_d3bwu")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dln7v3di35hes"]
+
+[ext_resource type="Script" uid="uid://b0pg6nubkd212" path="res://root/scenes/component/motion/twist_motion/twist_motion.gd" id="1_nmwo5"]
+
+[node name="TwistMotion" type="Node"]
+script = ExtResource("1_nmwo5")
+trigger_signals = Array[String](["focus_entered", "mouse_entered"])
+max_motion_factor = 0.95
+motion_duration = 0.5
+center_pivot = true
+transition_type = 9
+ease_type = 1

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4b36g3uhwemg"]
+
+[ext_resource type="Script" uid="uid://b3gly5cu7olig" path="res://root/scenes/component/audio/button_audio/button_audio.gd" id="1_xh5qi"]
+
+[node name="ButtonAudio" type="Node"]
+script = ExtResource("1_xh5qi")
+
+[node name="LastInteractionTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

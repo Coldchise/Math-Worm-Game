@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0jb36ccothm6"]
+
+[ext_resource type="Script" uid="uid://d02hj0ru0lilm" path="res://root/autoload/wrapper/audio_manager_wrapper/audio_manager_wrapper.gd" id="1_opo7p"]
+[ext_resource type="PackedScene" uid="uid://tbt0x12ecedf" path="res://root/autoload/wrapper/audio_manager_wrapper/audio_banks/audio_banks.tscn" id="2_hc0qt"]
+
+[node name="AudioManagerWrapper" type="Node"]
+script = ExtResource("1_opo7p")
+
+[node name="AudioBanks" parent="." instance=ExtResource("2_hc0qt")]
+unique_name_in_owner = true

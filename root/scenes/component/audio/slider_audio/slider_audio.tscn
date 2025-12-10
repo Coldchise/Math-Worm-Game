@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://o3ml7kr62sot"]
+
+[ext_resource type="Script" uid="uid://cq6nda4lfgir" path="res://root/scenes/component/audio/slider_audio/slider_audio.gd" id="1_ylltn"]
+
+[node name="SliderAudio" type="Node"]
+script = ExtResource("1_ylltn")

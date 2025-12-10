@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsp81vca8h8r"]
+
+[ext_resource type="Script" uid="uid://dnr788udvwibn" path="res://root/scenes/node/game/label_particle_tween/label_particle_tween.gd" id="1_b5n2i"]
+[ext_resource type="PackedScene" uid="uid://b6hkdnclxtdfq" path="res://root/scenes/component/tween/particle_tween/particle_tween.tscn" id="2_jnp2s"]
+
+[node name="LabelParticleTween" type="Label"]
+modulate = Color(1, 0.498039, 1, 1)
+z_as_relative = false
+anchors_preset = -1
+anchor_left = 0.138
+anchor_top = 0.035
+anchor_right = 0.138
+anchor_bottom = 0.035
+offset_left = -49.36
+offset_top = -25.2
+offset_right = 49.64
+offset_bottom = 25.8
+size_flags_horizontal = 4
+theme_type_variation = &"label_shadow"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "  +1 Love"
+script = ExtResource("1_b5n2i")
+
+[node name="ParticleTween" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_jnp2s")]
+target = NodePath("..")

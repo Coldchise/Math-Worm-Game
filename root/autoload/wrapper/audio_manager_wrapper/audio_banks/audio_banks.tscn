@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://tbt0x12ecedf"]
+
+[ext_resource type="Script" uid="uid://c7y2i6mmbehk2" path="res://root/autoload/wrapper/audio_manager_wrapper/audio_banks/audio_banks.gd" id="1_g1p0i"]
+[ext_resource type="Script" uid="uid://dv665da2qd3vw" path="res://addons/resonate/music_manager/music_bank.gd" id="2_hf03c"]
+[ext_resource type="Script" uid="uid://ddvt70masmb4h" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_2fsa7"]
+
+[node name="AudioBanks" type="Node"]
+script = ExtResource("1_g1p0i")
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("2_hf03c")
+
+[node name="SoundBank" type="Node" parent="."]
+script = ExtResource("3_2fsa7")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://caoh5yd0nri0y"]
+
+[ext_resource type="Script" uid="uid://cya32r8kpsdcc" path="res://root/scenes/node/menu/menu_configuration/menu_slider_node/menu_slider_node.gd" id="1_ewtrm"]
+[ext_resource type="PackedScene" uid="uid://d3u8kwt3fl0ao" path="res://root/scenes/node/menu/menu_configuration/menu_slider_node/menu_slider_ui/menu_slider_ui.tscn" id="2_45rb4"]
+
+[node name="MenuSliderNode" type="MarginContainer" node_paths=PackedStringArray("menu_slider_ui")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -17.0
+offset_right = 325.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ewtrm")
+menu_slider_ui = NodePath("MenuSliderUI")
+
+[node name="MenuSliderUI" parent="." instance=ExtResource("2_45rb4")]
+layout_mode = 2

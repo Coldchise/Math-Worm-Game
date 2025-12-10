@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuy4752ffy45t"]
+
+[ext_resource type="Script" uid="uid://ccpnqe5g73k6a" path="res://root/scenes/component/control/control_expand_stylebox/control_expand_stylebox.gd" id="1_kyvrb"]
+
+[node name="ControlExpandStylebox" type="Node"]
+script = ExtResource("1_kyvrb")

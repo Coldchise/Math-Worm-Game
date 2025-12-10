@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn4fnh2xadxxw"]
+
+[ext_resource type="Script" uid="uid://ccnxcrnsmwobf" path="res://root/autoload/wrapper/log_wrapper/log_wrapper.gd" id="1_fh6sr"]
+
+[node name="LogWrapper" type="Node"]
+script = ExtResource("1_fh6sr")

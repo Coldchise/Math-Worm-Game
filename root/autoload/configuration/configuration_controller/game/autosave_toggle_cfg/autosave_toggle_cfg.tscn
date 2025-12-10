@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://krwak04xmbv4"]
+
+[ext_resource type="Script" uid="uid://dnkjg3v0day6l" path="res://root/autoload/configuration/configuration_controller/game/autosave_toggle_cfg/autosave_toggle_cfg.gd" id="1_2vc2r"]
+
+[node name="AutosaveToggleCfg" type="Node"]
+script = ExtResource("1_2vc2r")
+config_group = 4
+config_id = "Autosave"

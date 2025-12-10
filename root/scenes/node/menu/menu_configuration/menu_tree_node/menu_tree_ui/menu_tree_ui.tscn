@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4omfoks65xcr"]
+
+[ext_resource type="Script" uid="uid://7newo55qb5ou" path="res://root/scenes/node/menu/menu_configuration/menu_tree_node/menu_tree_ui/menu_tree_ui.gd" id="1_gk5b5"]
+[ext_resource type="Texture2D" uid="uid://bhwgd4glhplao" path="res://root/assets/image/ui/symbol_icons/png/addition_symbol.png" id="2_0mlct"]
+[ext_resource type="Texture2D" uid="uid://8p3ikovnqeve" path="res://root/assets/image/ui/symbol_icons/png/subtraction_symbol.png" id="3_vrpeq"]
+[ext_resource type="PackedScene" uid="uid://chws140re2uqt" path="res://root/scenes/component/audio/tree_audio/tree_audio.tscn" id="4_uqxvo"]
+
+[node name="MenuTreeUI" type="Tree"]
+allow_reselect = true
+allow_rmb_select = true
+allow_search = false
+hide_root = true
+script = ExtResource("1_gk5b5")
+add_button_texture = ExtResource("2_0mlct")
+del_button_texture = ExtResource("3_vrpeq")
+
+[node name="TreeAudio" parent="." instance=ExtResource("4_uqxvo")]

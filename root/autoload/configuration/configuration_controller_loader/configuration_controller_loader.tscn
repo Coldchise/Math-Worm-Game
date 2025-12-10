@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqidby1xsrh47"]
+
+[ext_resource type="Script" uid="uid://cgg2ku8swf6qs" path="res://root/autoload/configuration/configuration_controller_loader/configuration_controller_loader.gd" id="1_e8mwm"]
+
+[node name="ConfigurationControllerLoader" type="Node"]
+script = ExtResource("1_e8mwm")

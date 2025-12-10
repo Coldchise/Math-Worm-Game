@@ -1,0 +1,12 @@
+Modified File: menu_doodle_2_loop.ogg
+- License: CC0 1.0 Universal (Public Domain)  
+  https://creativecommons.org/publicdomain/zero/1.0/  
+- Copyright: TinyTakinTeller, StumpyStrust  
+- Modifications: Converted the original MP3 to OGG format and created a looped version.
+  https://support.audacityteam.org/music/working-with-audio-loops/making-audio-loops
+
+Original File: menu_doodle_2.mp3
+- License: CC0 1.0 Universal (Public Domain)  
+  https://creativecommons.org/publicdomain/zero/1.0/  
+- Copyright: StumpyStrust  
+- Source: https://opengameart.org/content/menu-doodle-2

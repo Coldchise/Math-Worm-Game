@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db1gcd76ek5t7"]
+
+[ext_resource type="Script" uid="uid://cl2h2e6md2i3k" path="res://root/autoload/configuration/configuration_controller/audio/audio_slider_cfg/audio_slider_cfg.gd" id="1_akh6o"]
+
+[node name="AudioSliderCfg" type="Node"]
+script = ExtResource("1_akh6o")
+config_group = 1
+config_id = "MasterVolume"

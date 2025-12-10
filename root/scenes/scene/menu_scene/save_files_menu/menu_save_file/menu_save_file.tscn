@@ -1,0 +1,182 @@
+[gd_scene load_steps=5 format=3 uid="uid://boueadrfx15jl"]
+
+[ext_resource type="Script" uid="uid://co7w8okoqita5" path="res://root/scenes/scene/menu_scene/save_files_menu/menu_save_file/menu_save_file.gd" id="2_orwck"]
+[ext_resource type="Texture2D" uid="uid://186w5v7p2kg2" path="res://root/assets/image/ui/save_file_icon/svg/save_file_icon.svg" id="3_487ku"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="4_vpb3k"]
+[ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="4_wnyic"]
+
+[node name="MenuSaveFile" type="MarginContainer"]
+custom_minimum_size = Vector2(666, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("2_orwck")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SaveFileMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SaveFileMarginContainer"]
+layout_mode = 2
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/PaddingMarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_487ku")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameHBoxContainer" type="HBoxContainer" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameTitleLabel" type="Label" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer/NameHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 24
+text = "Name:"
+vertical_alignment = 1
+
+[node name="NameValueLabel" type="Label" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer/NameHBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(338, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Save ?"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="NameValueLineEdit" type="LineEdit" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer/NameHBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+max_length = 100
+select_all_on_focus = true
+caret_blink = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlaytimeHBoxContainer" type="HBoxContainer" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlaytimeTitleLabel" type="Label" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer/PlaytimeHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Time:"
+vertical_alignment = 1
+
+[node name="PlaytimeTimeLabel" type="Label" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer/PlaytimeHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "?h ??m ??s"
+vertical_alignment = 1
+
+[node name="PlaytimeDatetimeLabel" type="Label" parent="VBoxContainer/SaveFileMarginContainer/HBoxContainer/VBoxContainer/PlaytimeHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "01.01.2025 00:00"
+vertical_alignment = 1
+
+[node name="SaveFileButtonMarginContainer" type="MarginContainer" parent="VBoxContainer/SaveFileMarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="SaveFileButton" type="Button" parent="VBoxContainer/SaveFileMarginContainer/SaveFileButtonMarginContainer"]
+unique_name_in_owner = true
+z_index = -2048
+layout_mode = 2
+toggle_mode = true
+
+[node name="ButtonAudio" parent="VBoxContainer/SaveFileMarginContainer/SaveFileButtonMarginContainer/SaveFileButton" instance=ExtResource("4_vpb3k")]
+
+[node name="ButtonsMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ButtonsMarginContainer"]
+layout_mode = 2
+
+[node name="PlaySaveMenuButton" parent="VBoxContainer/ButtonsMarginContainer/HBoxContainer" instance=ExtResource("4_wnyic")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../RenameSaveMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+label = "MENU_LABEL_PLAY"
+padding_spaces = 0
+
+[node name="ExportSaveMenuButton" parent="VBoxContainer/ButtonsMarginContainer/HBoxContainer" instance=ExtResource("4_wnyic")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Export"
+label = "MENU_LABEL_EXPORT"
+padding_spaces = 0
+
+[node name="ImportSaveMenuButton" parent="VBoxContainer/ButtonsMarginContainer/HBoxContainer" instance=ExtResource("4_wnyic")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Import"
+label = "MENU_LABEL_IMPORT"
+padding_spaces = 0
+
+[node name="DeleteSaveMenuButton" parent="VBoxContainer/ButtonsMarginContainer/HBoxContainer" instance=ExtResource("4_wnyic")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Delete"
+label = "MENU_LABEL_DELETE"
+confirm_label = "MENU_LABEL_ARE_YOU_SURE"
+padding_spaces = 0
+
+[node name="RenameSaveMenuButton" parent="VBoxContainer/ButtonsMarginContainer/HBoxContainer" instance=ExtResource("4_wnyic")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../PlaySaveMenuButton")
+theme_override_font_sizes/font_size = 24
+text = "Rename"
+label = "MENU_LABEL_RENAME"
+padding_spaces = 0

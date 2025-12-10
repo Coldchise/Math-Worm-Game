@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bif8wd4q6rxty"]
+
+[ext_resource type="Script" uid="uid://dp4okmiopgubf" path="res://root/scenes/component/motion/scale_motion/scale_motion.gd" id="1_0wiwt"]
+
+[node name="ScaleMotion" type="Node"]
+script = ExtResource("1_0wiwt")
+max_motion_factor = 1.15
+add_motion_default = 0.15
+motion_duration = 0.16
+center_pivot = true
+transition_type = 7

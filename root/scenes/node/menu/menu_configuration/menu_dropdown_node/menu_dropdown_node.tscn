@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqg5p86vdf7ea"]
+
+[ext_resource type="Script" uid="uid://drixhyf7h6blf" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_node.gd" id="1_b6274"]
+[ext_resource type="PackedScene" uid="uid://cnr6k6bc0p03b" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_ui/menu_dropdown_ui.tscn" id="2_w178e"]
+
+[node name="MenuDropdownNode" type="MarginContainer" node_paths=PackedStringArray("menu_dropdown_ui")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -25.5
+offset_right = 325.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6274")
+menu_dropdown_ui = NodePath("MenuDropdownUI")
+
+[node name="MenuDropdownUI" parent="." instance=ExtResource("2_w178e")]
+layout_mode = 2
+option_titles_padding = 3

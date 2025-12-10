@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm8qadqrfaq73"]
+
+[ext_resource type="Script" uid="uid://cqg74liygutnf" path="res://root/autoload/overlay/overlay.gd" id="1_dgt80"]
+
+[node name="Overlay" type="Control"]
+process_mode = 3
+modulate = Color(0, 1, 0, 1)
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgt80")
+
+[node name="FPSCounterMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="FPSCounterLabel" type="Label" parent="FPSCounterMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "60 FPS"

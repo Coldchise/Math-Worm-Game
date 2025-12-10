@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi1h2mmru75xu"]
+
+[ext_resource type="Script" uid="uid://fjaeq8ewqvxa" path="res://root/autoload/configuration/configuration_controller/video/resolution_list_cfg/resolution_list_cfg.gd" id="1_updc2"]
+
+[node name="ResolutionListCfg" type="Node"]
+script = ExtResource("1_updc2")
+config_group = 2
+config_id = "Resolution"

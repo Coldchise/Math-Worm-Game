@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyk80i3lrqv7n"]
+
+[ext_resource type="Script" uid="uid://36pgcg45fi17" path="res://root/autoload/configuration/configuration_controller/game/number_format_list_cfg/number_format_list_cfg.gd" id="1_2f64f"]
+
+[node name="NumberFormatListCfg" type="Node"]
+script = ExtResource("1_2f64f")
+config_group = 4
+config_id = "NumberFormat"

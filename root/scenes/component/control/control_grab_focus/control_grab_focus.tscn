@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv7d4vxqjocks"]
+
+[ext_resource type="Script" uid="uid://hg8v5nm854yf" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.gd" id="1_jklka"]
+
+[node name="ControlGrabFocus" type="Node"]
+script = ExtResource("1_jklka")

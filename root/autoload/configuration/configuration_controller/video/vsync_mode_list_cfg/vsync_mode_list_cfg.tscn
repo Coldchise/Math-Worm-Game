@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5o3ynqqwk2lw"]
+
+[ext_resource type="Script" uid="uid://31sx7485e8lp" path="res://root/autoload/configuration/configuration_controller/video/vsync_mode_list_cfg/vsync_mode_list_cfg.gd" id="1_5rl4t"]
+
+[node name="VsyncModeListCfg" type="Node"]
+script = ExtResource("1_5rl4t")
+config_group = 2
+config_id = "VsyncMode"

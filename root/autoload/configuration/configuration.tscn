@@ -1,0 +1,88 @@
+[gd_scene load_steps=21 format=3 uid="uid://dqny02vjtqsld"]
+
+[ext_resource type="Script" uid="uid://bpr2k78svjb7e" path="res://root/autoload/configuration/configuration.gd" id="1_7lhyf"]
+[ext_resource type="PackedScene" uid="uid://c0k2ps5m6a6t2" path="res://root/autoload/configuration/configuration_controller/video/display_mode_list_cfg/display_mode_list_cfg.tscn" id="3_7131m"]
+[ext_resource type="PackedScene" uid="uid://cs5es1chsqnxh" path="res://root/autoload/configuration/configuration_controller/video/fps_limit_list_cfg/fps_limit_list_cfg.tscn" id="5_6qim6"]
+[ext_resource type="PackedScene" uid="uid://bi1h2mmru75xu" path="res://root/autoload/configuration/configuration_controller/video/resolution_list_cfg/resolution_list_cfg.tscn" id="6_i3ynv"]
+[ext_resource type="PackedScene" uid="uid://dfuutdcn82url" path="res://root/autoload/configuration/configuration_controller/game/game_mode_list_cfg/game_mode_list_cfg.tscn" id="6_ob1ei"]
+[ext_resource type="PackedScene" uid="uid://bdbvaj8n4ebs2" path="res://root/autoload/configuration/configuration_controller/game/locale_list_cfg/locale_list_cfg.tscn" id="7_fxsyt"]
+[ext_resource type="PackedScene" uid="uid://c5o3ynqqwk2lw" path="res://root/autoload/configuration/configuration_controller/video/vsync_mode_list_cfg/vsync_mode_list_cfg.tscn" id="7_yura4"]
+[ext_resource type="PackedScene" uid="uid://db1gcd76ek5t7" path="res://root/autoload/configuration/configuration_controller/audio/audio_slider_cfg/audio_slider_cfg.tscn" id="8_a8r4s"]
+[ext_resource type="PackedScene" uid="uid://dyk80i3lrqv7n" path="res://root/autoload/configuration/configuration_controller/game/number_format_list_cfg/number_format_list_cfg.tscn" id="8_jmwsa"]
+[ext_resource type="PackedScene" uid="uid://byjx1206p5e23" path="res://root/autoload/configuration/configuration_controller/video/window_zoom_slider_cfg/window_zoom_slider_cfg.tscn" id="8_k58us"]
+[ext_resource type="PackedScene" uid="uid://caf75irwvm3y6" path="res://root/autoload/configuration/configuration_controller/video/anti_alias_list_cfg/anti_alias_list_cfg.tscn" id="8_t3n1y"]
+[ext_resource type="PackedScene" uid="uid://cqidby1xsrh47" path="res://root/autoload/configuration/configuration_controller_loader/configuration_controller_loader.tscn" id="9_80jwx"]
+[ext_resource type="PackedScene" uid="uid://b0fv37a4pcx11" path="res://root/autoload/configuration/configuration_controller/video/fps_count_toggle_cfg/fps_count_toggle_cfg.tscn" id="9_bv2dd"]
+[ext_resource type="PackedScene" uid="uid://nbbpjwjia4sl" path="res://root/autoload/configuration/configuration_controller/audio/music_slider_cfg/music_slider_cfg.tscn" id="9_jo2pr"]
+[ext_resource type="PackedScene" uid="uid://bkgpwmx03pwtd" path="res://root/autoload/configuration/configuration_controller/other/theme_list_cfg/theme_list_cfg.tscn" id="10_ut1vk"]
+[ext_resource type="PackedScene" uid="uid://wjt1a1yw271k" path="res://root/autoload/configuration/configuration_controller/audio/sfx_slider_cfg/sfx_slider_cfg.tscn" id="10_v5m8f"]
+[ext_resource type="PackedScene" uid="uid://sgdo45b364vh" path="res://root/autoload/configuration/configuration_controller/audio/audio_toggle_cfg/audio_toggle_cfg.tscn" id="12_in80t"]
+[ext_resource type="PackedScene" uid="uid://krwak04xmbv4" path="res://root/autoload/configuration/configuration_controller/game/autosave_toggle_cfg/autosave_toggle_cfg.tscn" id="16_armqg"]
+[ext_resource type="PackedScene" uid="uid://crq7ljoikvhid" path="res://root/autoload/configuration/configuration_controller/controls/keybinds_tree_cfg/keybinds_tree_cfg.tscn" id="18_2ni80"]
+[ext_resource type="PackedScene" uid="uid://bnwf6070alvyp" path="res://root/autoload/configuration/configuration_node/logger_wrapper_configuration/logger_wrapper_configuration.tscn" id="18_qkn1e"]
+
+[node name="Configuration" type="Node" node_paths=PackedStringArray("loader")]
+script = ExtResource("1_7lhyf")
+loader = NodePath("Exports/ConfigurationControllerLoader")
+
+[node name="Exports" type="Node" parent="."]
+
+[node name="ConfigurationControllerLoader" parent="Exports" node_paths=PackedStringArray("configuration_controllers_root") instance=ExtResource("9_80jwx")]
+configuration_controllers_root = NodePath("../../ConfigurationControllers")
+
+[node name="ConfigurationControllers" type="Node" parent="."]
+
+[node name="AntiAliasListCfg" parent="ConfigurationControllers" instance=ExtResource("8_t3n1y")]
+unique_name_in_owner = true
+
+[node name="DisplayModeListCfg" parent="ConfigurationControllers" instance=ExtResource("3_7131m")]
+unique_name_in_owner = true
+
+[node name="FpsLimitListCfg" parent="ConfigurationControllers" instance=ExtResource("5_6qim6")]
+unique_name_in_owner = true
+
+[node name="GameModeListCfg" parent="ConfigurationControllers" instance=ExtResource("6_ob1ei")]
+unique_name_in_owner = true
+
+[node name="LocaleListCfg" parent="ConfigurationControllers" instance=ExtResource("7_fxsyt")]
+unique_name_in_owner = true
+
+[node name="NumberFormatListCfg" parent="ConfigurationControllers" instance=ExtResource("8_jmwsa")]
+unique_name_in_owner = true
+
+[node name="ResolutionListCfg" parent="ConfigurationControllers" instance=ExtResource("6_i3ynv")]
+unique_name_in_owner = true
+
+[node name="ThemeListCfg" parent="ConfigurationControllers" instance=ExtResource("10_ut1vk")]
+unique_name_in_owner = true
+
+[node name="VsyncModeListCfg" parent="ConfigurationControllers" instance=ExtResource("7_yura4")]
+unique_name_in_owner = true
+
+[node name="AudioSliderCfg" parent="ConfigurationControllers" instance=ExtResource("8_a8r4s")]
+unique_name_in_owner = true
+
+[node name="MusicSliderCfg" parent="ConfigurationControllers" instance=ExtResource("9_jo2pr")]
+unique_name_in_owner = true
+
+[node name="SfxSliderCfg" parent="ConfigurationControllers" instance=ExtResource("10_v5m8f")]
+unique_name_in_owner = true
+
+[node name="WindowZoomSliderCfg" parent="ConfigurationControllers" instance=ExtResource("8_k58us")]
+unique_name_in_owner = true
+
+[node name="AudioToggleCfg" parent="ConfigurationControllers" instance=ExtResource("12_in80t")]
+unique_name_in_owner = true
+
+[node name="AutosaveToggleCfg" parent="ConfigurationControllers" instance=ExtResource("16_armqg")]
+unique_name_in_owner = true
+
+[node name="FpsCountToggleCfg" parent="ConfigurationControllers" instance=ExtResource("9_bv2dd")]
+unique_name_in_owner = true
+
+[node name="KeybindsTreeCfg" parent="ConfigurationControllers" instance=ExtResource("18_2ni80")]
+unique_name_in_owner = true
+
+[node name="ConfigurationNodes" type="Node" parent="."]
+
+[node name="LoggerWrapperConfiguration" parent="ConfigurationNodes" instance=ExtResource("18_qkn1e")]

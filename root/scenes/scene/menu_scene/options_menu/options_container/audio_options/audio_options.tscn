@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://pd1a3fwjkrdl"]
+
+[ext_resource type="Script" uid="uid://daml0oe54jvyb" path="res://root/scenes/scene/menu_scene/options_menu/options_container/audio_options/audio_options.gd" id="1_1aoep"]
+[ext_resource type="PackedScene" uid="uid://caoh5yd0nri0y" path="res://root/scenes/node/menu/menu_configuration/menu_slider_node/menu_slider_node.tscn" id="4_syoqd"]
+[ext_resource type="PackedScene" uid="uid://cauyngcle8qc1" path="res://root/scenes/node/menu/menu_configuration/menu_toggle_node/menu_toggle_node.tscn" id="5_7wvyv"]
+
+[node name="AudioOptions" type="MarginContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_1aoep")
+
+[node name="RootVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioMenuSliderNode" parent="RootVBoxContainer" instance=ExtResource("4_syoqd")]
+layout_mode = 2
+slider_cfg = 1
+title = "MENU_LABEL_MASTER"
+
+[node name="MusicMenuSliderNode" parent="RootVBoxContainer" instance=ExtResource("4_syoqd")]
+layout_mode = 2
+slider_cfg = 2
+title = "MENU_LABEL_MUSIC"
+
+[node name="SFXMenuSliderNode" parent="RootVBoxContainer" instance=ExtResource("4_syoqd")]
+layout_mode = 2
+slider_cfg = 3
+title = "MENU_LABEL_EFFECTS"
+
+[node name="MenuToggleNode" parent="RootVBoxContainer" instance=ExtResource("5_7wvyv")]
+layout_mode = 2
+toggle_cfg = 1
+title = "MENU_LABEL_AUDIO"

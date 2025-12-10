@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdbvaj8n4ebs2"]
+
+[ext_resource type="Script" uid="uid://dwj0g7ixe354k" path="res://root/autoload/configuration/configuration_controller/game/locale_list_cfg/locale_list_cfg.gd" id="1_moyhg"]
+
+[node name="LocaleListCfg" type="Node"]
+script = ExtResource("1_moyhg")
+config_group = 4
+config_id = "Locale"

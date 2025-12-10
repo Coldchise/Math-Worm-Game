@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1mww2lcjtmm7" path="res://assets/Script/dialog_manager.gd" id="1_lohcx"]
 [ext_resource type="FontFile" uid="uid://bea8ka606tsde" path="res://assets/font/Cubic_11_1.013_R.ttf" id="1_swmoi"]
-[ext_resource type="Texture2D" path="res://panelforquestions.png" id="3_g0nxy"]
+[ext_resource type="Texture2D" uid="uid://dy2c0uk0sbvqa" path="res://panelforquestions.png" id="3_g0nxy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lohcx"]
 bg_color = Color(1, 1, 1, 1)

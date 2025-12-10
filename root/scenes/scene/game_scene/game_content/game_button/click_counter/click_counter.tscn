@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpci1qpmsjkbg"]
+
+[ext_resource type="Script" uid="uid://bwjhuwbbtn2ck" path="res://root/scenes/scene/game_scene/game_content/game_button/click_counter/click_counter.gd" id="1_ea8xq"]
+
+[node name="ClickCounter" type="Node"]
+script = ExtResource("1_ea8xq")

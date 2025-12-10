@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://crvdmtowmw2sc"]
+
+[ext_resource type="Material" uid="uid://djfj1oxf2lsrm" path="res://root/resources/preload/particle_process_material/tres/game_button.tres" id="1_iokbb"]
+[ext_resource type="Script" uid="uid://cq2xtdebg1i3e" path="res://root/scenes/component/emitter/particle_emitter/label_particle_emitter/label_particle_emitter.gd" id="2_31wt5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_54e2o"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u26on"]
+
+[node name="LabelParticleEmitter" type="GPUParticles2D" node_paths=PackedStringArray("sub_viewport", "particle")]
+texture = SubResource("ViewportTexture_54e2o")
+lifetime = 3.0
+process_material = ExtResource("1_iokbb")
+script = ExtResource("2_31wt5")
+particle_process_material_id = "game_button"
+sub_viewport = NodePath("SubViewport")
+particle = NodePath("SubViewport/CanvasLayer/Particle")
+
+[node name="DebugTextureRect" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_u26on")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+transparent_bg = true
+size = Vector2i(200, 50)
+size_2d_override_stretch = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
+
+[node name="Particle" type="Control" parent="SubViewport/CanvasLayer"]
+unique_name_in_owner = true
+modulate = Color(1, 0.498039, 1, 1)
+z_index = 999
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CanvasLayer/Particle"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer/Particle/MarginContainer"]
+unique_name_in_owner = true
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"label_shadow"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "  +1 Love"

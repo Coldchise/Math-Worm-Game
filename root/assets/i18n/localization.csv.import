@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dvnnjjuuwj6dd"
+
+[deps]
+
+files=["res://root/assets/i18n/localization.description.translation", "res://root/assets/i18n/localization.en.translation", "res://root/assets/i18n/localization.fr.translation", "res://root/assets/i18n/localization.es.translation", "res://root/assets/i18n/localization.de.translation", "res://root/assets/i18n/localization.it.translation", "res://root/assets/i18n/localization.ptBR.translation", "res://root/assets/i18n/localization.pt.translation", "res://root/assets/i18n/localization.ru.translation", "res://root/assets/i18n/localization.el.translation", "res://root/assets/i18n/localization.tr.translation", "res://root/assets/i18n/localization.da.translation", "res://root/assets/i18n/localization.nb.translation", "res://root/assets/i18n/localization.sv.translation", "res://root/assets/i18n/localization.nl.translation", "res://root/assets/i18n/localization.pl.translation", "res://root/assets/i18n/localization.fi.translation", "res://root/assets/i18n/localization.ja.translation", "res://root/assets/i18n/localization.zh.translation", "res://root/assets/i18n/localization.zhZH.translation", "res://root/assets/i18n/localization.ko.translation", "res://root/assets/i18n/localization.cs.translation", "res://root/assets/i18n/localization.hu.translation", "res://root/assets/i18n/localization.ro.translation", "res://root/assets/i18n/localization.th.translation", "res://root/assets/i18n/localization.bg.translation", "res://root/assets/i18n/localization.he.translation", "res://root/assets/i18n/localization.ar.translation", "res://root/assets/i18n/localization.bs.translation"]
+
+source_file="res://root/assets/i18n/localization.csv"
+dest_files=["res://root/assets/i18n/localization.description.translation", "res://root/assets/i18n/localization.en.translation", "res://root/assets/i18n/localization.fr.translation", "res://root/assets/i18n/localization.es.translation", "res://root/assets/i18n/localization.de.translation", "res://root/assets/i18n/localization.it.translation", "res://root/assets/i18n/localization.ptBR.translation", "res://root/assets/i18n/localization.pt.translation", "res://root/assets/i18n/localization.ru.translation", "res://root/assets/i18n/localization.el.translation", "res://root/assets/i18n/localization.tr.translation", "res://root/assets/i18n/localization.da.translation", "res://root/assets/i18n/localization.nb.translation", "res://root/assets/i18n/localization.sv.translation", "res://root/assets/i18n/localization.nl.translation", "res://root/assets/i18n/localization.pl.translation", "res://root/assets/i18n/localization.fi.translation", "res://root/assets/i18n/localization.ja.translation", "res://root/assets/i18n/localization.zh.translation", "res://root/assets/i18n/localization.zhZH.translation", "res://root/assets/i18n/localization.ko.translation", "res://root/assets/i18n/localization.cs.translation", "res://root/assets/i18n/localization.hu.translation", "res://root/assets/i18n/localization.ro.translation", "res://root/assets/i18n/localization.th.translation", "res://root/assets/i18n/localization.bg.translation", "res://root/assets/i18n/localization.he.translation", "res://root/assets/i18n/localization.ar.translation", "res://root/assets/i18n/localization.bs.translation"]
+
+[params]
+
+compress=true
+delimiter=0

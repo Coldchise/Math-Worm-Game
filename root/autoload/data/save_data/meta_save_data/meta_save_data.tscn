@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr7wsdokcqccw"]
+
+[ext_resource type="Script" uid="uid://boce8exsdkqvs" path="res://root/autoload/data/save_data/meta_save_data/meta_save_data.gd" id="1_vbcn1"]
+
+[node name="MetaSaveData" type="Node"]
+script = ExtResource("1_vbcn1")

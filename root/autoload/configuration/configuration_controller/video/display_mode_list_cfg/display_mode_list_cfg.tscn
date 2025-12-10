@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0k2ps5m6a6t2"]
+
+[ext_resource type="Script" uid="uid://cwf3pnjg4df3i" path="res://root/autoload/configuration/configuration_controller/video/display_mode_list_cfg/display_mode_list_cfg.gd" id="1_ctxhi"]
+
+[node name="DisplayModeListCfg" type="Node"]
+script = ExtResource("1_ctxhi")
+config_group = 2
+config_id = "DisplayMode"

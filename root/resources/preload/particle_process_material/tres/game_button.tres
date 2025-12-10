@@ -1,0 +1,40 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=6 format=3 uid="uid://djfj1oxf2lsrm"]
+
+[sub_resource type="Curve" id="Curve_b55cx"]
+_data = [Vector2(0.0725076, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6e37s"]
+curve = SubResource("Curve_b55cx")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_v30b6"]
+
+[sub_resource type="Curve" id="Curve_h1l8l"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7k4nc"]
+curve = SubResource("Curve_h1l8l")
+
+[resource]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 2, 1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, -2, 0)
+spread = 60.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+directional_velocity_min = -1.00002
+directional_velocity_max = 0.999984
+directional_velocity_curve = SubResource("CurveXYZTexture_v30b6")
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 98, 0)
+linear_accel_curve = SubResource("CurveTexture_7k4nc")
+alpha_curve = SubResource("CurveTexture_6e37s")

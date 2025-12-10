@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://s26ypj4otfru"]
+
+[ext_resource type="Script" uid="uid://ds6orgj6mvsf1" path="res://root/scenes/scene/menu_scene/options_menu/options_container/game_options/game_options.gd" id="1_umgsk"]
+[ext_resource type="PackedScene" uid="uid://cauyngcle8qc1" path="res://root/scenes/node/menu/menu_configuration/menu_toggle_node/menu_toggle_node.tscn" id="4_wai8x"]
+[ext_resource type="PackedScene" uid="uid://cqg5p86vdf7ea" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_node.tscn" id="5_skgyg"]
+
+[node name="GameOptions" type="MarginContainer"]
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_umgsk")
+
+[node name="RootVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="AutosaveMenuToggleNode" parent="RootVBoxContainer" instance=ExtResource("4_wai8x")]
+layout_mode = 2
+toggle_cfg = 3
+title = "MENU_OPTIONS_AUTOSAVE"
+
+[node name="NumberFormatMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_skgyg")]
+layout_mode = 2
+list_cfg = 7
+title = "NUMBER_FORMAT"
+
+[node name="LocaleMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_skgyg")]
+layout_mode = 2
+list_cfg = 8
+title = "MENU_LABEL_LANGUAGE"
+
+[node name="GameModeHSeparator" type="HSeparator" parent="RootVBoxContainer"]
+layout_mode = 2
+
+[node name="GameModeMenuDropdownNode" parent="RootVBoxContainer" instance=ExtResource("5_skgyg")]
+unique_name_in_owner = true
+layout_mode = 2
+list_cfg = 6
+title = "MENU_LABEL_GAME_MODE"

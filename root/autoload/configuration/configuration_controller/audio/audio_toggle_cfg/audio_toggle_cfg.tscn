@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://sgdo45b364vh"]
+
+[ext_resource type="Script" uid="uid://doklicyshyycx" path="res://root/autoload/configuration/configuration_controller/audio/audio_toggle_cfg/audio_toggle_cfg.gd" id="1_6xci3"]
+
+[node name="AudioToggleCfg" type="Node"]
+script = ExtResource("1_6xci3")
+config_group = 1
+config_id = "AudioEnabled"

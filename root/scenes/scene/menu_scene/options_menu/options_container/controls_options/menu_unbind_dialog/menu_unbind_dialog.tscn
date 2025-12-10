@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://qvs46px63ht1"]
+
+[ext_resource type="Script" uid="uid://dmo1r3knjcdil" path="res://root/scenes/scene/menu_scene/options_menu/options_container/controls_options/menu_unbind_dialog/menu_unbind_dialog.gd" id="1_ldyru"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="1_vhblg"]
+
+[node name="MenuUnbindDialog" type="ConfirmationDialog"]
+auto_translate_mode = 1
+title = ""
+initial_position = 1
+script = ExtResource("1_ldyru")
+
+[node name="OkButtonAudio" parent="." instance=ExtResource("1_vhblg")]
+
+[node name="CancelButtonAudio" parent="." instance=ExtResource("1_vhblg")]

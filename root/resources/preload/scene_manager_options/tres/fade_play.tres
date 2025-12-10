@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SceneManagerOptions" load_steps=2 format=3 uid="uid://ti8y0bj6yjlv"]
+
+[ext_resource type="Script" uid="uid://drbbi1iynv4dt" path="res://root/resources/preload/scene_manager_options/scene_manager_options.gd" id="1_gmxcx"]
+
+[resource]
+script = ExtResource("1_gmxcx")
+fade_out_speed = 1.0
+fade_out_pattern = 2
+fade_out_smoothness = 0.1
+fade_out_inverted = false
+fade_in_speed = 1.0
+fade_in_pattern = 2
+fade_in_smoothness = 0.1
+fade_in_inverted = true
+color = Color(0, 0, 0, 1)
+timeout = 0.0
+clickable = false
+add_to_back = true

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c37gvi340nhts" path="res://assets/Scene/dialog_manager.tscn" id="6_xy0qq"]
 [ext_resource type="PackedScene" uid="uid://0p2jdak37jea" path="res://assets/Scene/key_pad.tscn" id="7_a5cwf"]
 [ext_resource type="FontFile" uid="uid://cfhyd5hmym1s4" path="res://assets/font/Kenney Pixel.ttf" id="8_f600x"]
-[ext_resource type="Texture2D" path="res://battleSceneButton.png" id="9_isofw"]
+[ext_resource type="Texture2D" uid="uid://xye26qwuhrll" path="res://battleSceneButton.png" id="9_isofw"]
 [ext_resource type="FontFile" uid="uid://d12hnvq203mdg" path="res://assets/font/SourceCodePro-Bold.ttf" id="10_y2j1b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1vkf"]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://blj2ibtiuk6nf"]
+
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="1_hsx5r"]
+[ext_resource type="Script" uid="uid://dt8q3agctavy0" path="res://root/scenes/scene/menu_scene/save_files_menu/menu_textbox_dialog/menu_textbox_dialog.gd" id="1_xxhpb"]
+
+[node name="MenuTextboxDialog" type="ConfirmationDialog"]
+title = ""
+initial_position = 2
+size = Vector2i(500, 527)
+visible = true
+script = ExtResource("1_xxhpb")
+
+[node name="InputVBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="InputVBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Title"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SubtitleLabel" type="Label" parent="InputVBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Subtitle"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="InputVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InputVBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="CodeTextEdit" type="TextEdit" parent="InputVBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+autowrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="OkButtonAudio" parent="." instance=ExtResource("1_hsx5r")]
+
+[node name="CancelButtonAudio" parent="." instance=ExtResource("1_hsx5r")]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5v0hlvdp1mxx"]
+
+[ext_resource type="Script" uid="uid://bdih0brfly4nl" path="res://root/scenes/scene/menu_scene/options_menu/options_container/controls_options/menu_keybind_dialog/menu_keybind_dialog.gd" id="1_yjloi"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="2_y1wjw"]
+
+[node name="MenuBindDialog" type="ConfirmationDialog"]
+auto_translate_mode = 1
+title = ""
+initial_position = 1
+size = Vector2i(221, 117)
+dialog_text = "Delete Action/Up keybind?"
+script = ExtResource("1_yjloi")
+
+[node name="InputVBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 213.0
+offset_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="InputVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+
+[node name="InputLabel" type="Label" parent="InputVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+
+[node name="InputTextEdit" type="TextEdit" parent="InputVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DelayTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
+
+[node name="OkButtonAudio" parent="." instance=ExtResource("2_y1wjw")]
+
+[node name="CancelButtonAudio" parent="." instance=ExtResource("2_y1wjw")]

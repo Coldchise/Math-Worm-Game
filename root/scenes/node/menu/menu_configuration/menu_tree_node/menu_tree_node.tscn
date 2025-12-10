@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://clkk18bjnjuac"]
+
+[ext_resource type="Script" uid="uid://cm2psy0jlj8hp" path="res://root/scenes/node/menu/menu_configuration/menu_tree_node/menu_tree_node.gd" id="1_4dl1t"]
+[ext_resource type="PackedScene" uid="uid://c4omfoks65xcr" path="res://root/scenes/node/menu/menu_configuration/menu_tree_node/menu_tree_ui/menu_tree_ui.tscn" id="2_1ko1i"]
+[ext_resource type="Texture2D" uid="uid://bhwgd4glhplao" path="res://root/assets/image/ui/symbol_icons/png/addition_symbol.png" id="2_cevkw"]
+[ext_resource type="Texture2D" uid="uid://8p3ikovnqeve" path="res://root/assets/image/ui/symbol_icons/png/subtraction_symbol.png" id="3_407o1"]
+
+[node name="MenuTreeNode" type="Control" node_paths=PackedStringArray("menu_tree_ui")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4dl1t")
+add_button_texture = ExtResource("2_cevkw")
+del_button_texture = ExtResource("3_407o1")
+menu_tree_ui = NodePath("MenuTreeUI")
+
+[node name="MenuTreeUI" parent="." instance=ExtResource("2_1ko1i")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

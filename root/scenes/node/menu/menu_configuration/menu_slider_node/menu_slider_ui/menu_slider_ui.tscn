@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3u8kwt3fl0ao"]
+
+[ext_resource type="Script" uid="uid://pyi2oqy0roxf" path="res://root/scenes/node/menu/menu_configuration/menu_slider_node/menu_slider_ui/menu_slider_ui.gd" id="1_ruy7t"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="2_2fayp"]
+[ext_resource type="PackedScene" uid="uid://cuy4752ffy45t" path="res://root/scenes/component/control/control_expand_stylebox/control_expand_stylebox.tscn" id="3_it4qg"]
+[ext_resource type="PackedScene" uid="uid://o3ml7kr62sot" path="res://root/scenes/component/audio/slider_audio/slider_audio.tscn" id="4_1yllo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipe2a"]
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+anti_aliasing = false
+
+[node name="MenuSliderUI" type="MarginContainer" node_paths=PackedStringArray("h_slider", "title_label", "value_label")]
+custom_minimum_size = Vector2(650, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = ExtResource("1_ruy7t")
+h_slider = NodePath("HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer/HSlider")
+title_label = NodePath("HBoxContainer/LabelMarginContainer/LabelHBoxContainer/TitleLabel")
+value_label = NodePath("HBoxContainer/ValueMarginContainer/ValueHBoxContainer/ValueLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="LabelHBoxContainer" type="HBoxContainer" parent="HBoxContainer/LabelMarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/LabelMarginContainer/LabelHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="ValueHBoxContainer" type="HBoxContainer" parent="HBoxContainer/ValueMarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ValueLabel" type="Label" parent="HBoxContainer/ValueMarginContainer/ValueHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderVBoxContainer" type="HBoxContainer" parent="HBoxContainer/SliderMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="DecrementSliderButton" type="Button" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath(".")
+text = "<<"
+
+[node name="ButtonAudio" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/DecrementSliderButton" instance=ExtResource("2_2fayp")]
+
+[node name="DecrementStepSliderButton" type="Button" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_right = NodePath("../IncrementStepSliderButton")
+text = "<"
+
+[node name="ButtonAudio" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/DecrementStepSliderButton" instance=ExtResource("2_2fayp")]
+
+[node name="SliderMarginContainer" type="MarginContainer" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_mode = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_ipe2a")
+
+[node name="ControlExpandStylebox" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer/HSlider" instance=ExtResource("3_it4qg")]
+
+[node name="SliderAudio" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer/HSlider" instance=ExtResource("4_1yllo")]
+
+[node name="IncrementStepSliderButton" type="Button" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../DecrementStepSliderButton")
+text = ">"
+
+[node name="ButtonAudio" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/IncrementStepSliderButton" instance=ExtResource("2_2fayp")]
+
+[node name="IncrementSliderButton" type="Button" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_right = NodePath(".")
+text = ">>"
+
+[node name="ButtonAudio" parent="HBoxContainer/SliderMarginContainer/SliderVBoxContainer/IncrementSliderButton" instance=ExtResource("2_2fayp")]

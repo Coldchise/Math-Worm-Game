@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccrcijb3tl6sd"]
+
+[ext_resource type="Script" uid="uid://bvt4h8tta0jf1" path="res://root/artifacts/example_empty_project/scenes/game_content/game_content.gd" id="1_oqj4t"]
+
+[node name="GameContent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oqj4t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0.501961, 1)

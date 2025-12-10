@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://be0q3pluiy70j"]
+
+[ext_resource type="Script" uid="uid://c4wvoceo18brw" path="res://root/autoload/data/data.gd" id="1_lxqnb"]
+[ext_resource type="PackedScene" uid="uid://cr7wsdokcqccw" path="res://root/autoload/data/save_data/meta_save_data/meta_save_data.tscn" id="2_itpja"]
+[ext_resource type="PackedScene" uid="uid://babllcijku2kx" path="res://root/autoload/data/save_data/game_save_data/game_save_data.tscn" id="3_fr31e"]
+
+[node name="Data" type="Node"]
+script = ExtResource("1_lxqnb")
+use_security = true
+export_secret = "f1c671ac-6eee-4517-af32-8f4f2e348804"
+export_salt = true
+export_encryption = 1
+
+[node name="MetaSaveData" parent="." instance=ExtResource("2_itpja")]
+unique_name_in_owner = true
+category = "meta"
+metadata = true
+
+[node name="GameSaveData" parent="." instance=ExtResource("3_fr31e")]
+unique_name_in_owner = true
+category = "game"
+
+[node name="AutosaveTimer" type="Timer" parent="."]
+unique_name_in_owner = true

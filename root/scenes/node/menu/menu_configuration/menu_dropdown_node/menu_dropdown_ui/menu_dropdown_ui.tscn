@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnr6k6bc0p03b"]
+
+[ext_resource type="Script" uid="uid://dlupcf7s7wbji" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_ui/menu_dropdown_ui.gd" id="1_yaixh"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="2_ixx1j"]
+
+[node name="MenuDropdownUI" type="MarginContainer" node_paths=PackedStringArray("option_button", "title_label")]
+custom_minimum_size = Vector2(650, 0)
+offset_right = 600.0
+offset_bottom = 51.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = ExtResource("1_yaixh")
+option_titles_padding = 1
+option_button = NodePath("HBoxContainer/ToggleMarginContainer/ToggleVBoxContainer/OptionButton")
+title_label = NodePath("HBoxContainer/LabelMarginContainer/LabelHBoxContainer/TitleLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="LabelHBoxContainer" type="HBoxContainer" parent="HBoxContainer/LabelMarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/LabelMarginContainer/LabelHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToggleMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ToggleVBoxContainer" type="HBoxContainer" parent="HBoxContainer/ToggleMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/ToggleMarginContainer/ToggleVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 16
+action_mode = 1
+alignment = 1
+
+[node name="ButtonAudio" parent="HBoxContainer/ToggleMarginContainer/ToggleVBoxContainer/OptionButton" instance=ExtResource("2_ixx1j")]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2owjxrhgllgx"]
+
+[ext_resource type="Script" uid="uid://dvf8rj3ygiod8" path="res://root/scenes/scene/menu_scene/options_menu/options_container/controls_options/controls_options.gd" id="1_g2i3h"]
+[ext_resource type="PackedScene" uid="uid://qvs46px63ht1" path="res://root/scenes/scene/menu_scene/options_menu/options_container/controls_options/menu_unbind_dialog/menu_unbind_dialog.tscn" id="3_0bhk7"]
+[ext_resource type="PackedScene" uid="uid://clkk18bjnjuac" path="res://root/scenes/node/menu/menu_configuration/menu_tree_node/menu_tree_node.tscn" id="3_56gea"]
+[ext_resource type="PackedScene" uid="uid://b5v0hlvdp1mxx" path="res://root/scenes/scene/menu_scene/options_menu/options_container/controls_options/menu_keybind_dialog/menu_keybind_dialog.tscn" id="3_xhl5h"]
+
+[node name="ControlsOptions" type="MarginContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -341.0
+offset_right = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_g2i3h")
+
+[node name="RootVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="KeybindsMapMarginContainer" type="MarginContainer" parent="RootVBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(650, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuTreeNode" parent="RootVBoxContainer/KeybindsMapMarginContainer" instance=ExtResource("3_56gea")]
+unique_name_in_owner = true
+layout_mode = 2
+tree_cfg = 1
+
+[node name="MenuUnbindDialog" parent="." instance=ExtResource("3_0bhk7")]
+unique_name_in_owner = true
+
+[node name="MenuBindDialog" parent="." instance=ExtResource("3_xhl5h")]
+unique_name_in_owner = true
+size = Vector2i(221, 125)
+dialog_text = ""

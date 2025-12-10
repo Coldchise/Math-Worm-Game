@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://0p2jdak37jea"]
 
 [ext_resource type="Script" uid="uid://4s6mct51lp8x" path="res://assets/Script/key_pad.gd" id="1_yatoq"]
-[ext_resource type="Texture2D" path="res://battleSceneButton.png" id="2_rgscy"]
+[ext_resource type="Texture2D" uid="uid://xye26qwuhrll" path="res://battleSceneButton.png" id="2_rgscy"]
 [ext_resource type="FontFile" uid="uid://cfhyd5hmym1s4" path="res://assets/font/Kenney Pixel.ttf" id="2_vry2g"]
-[ext_resource type="Texture2D" path="res://clickedButton.png" id="3_vry2g"]
-[ext_resource type="Texture2D" path="res://selection button.png" id="6_71sse"]
+[ext_resource type="Texture2D" uid="uid://drjs6xymobxep" path="res://clickedButton.png" id="3_vry2g"]
+[ext_resource type="Texture2D" uid="uid://cl6lcgcw6r353" path="res://selection button.png" id="6_71sse"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yatoq"]
 texture = ExtResource("2_rgscy")

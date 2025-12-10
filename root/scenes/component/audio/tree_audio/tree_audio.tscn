@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chws140re2uqt"]
+
+[ext_resource type="Script" uid="uid://bycapq3438vo8" path="res://root/scenes/component/audio/tree_audio/tree_audio.gd" id="1_0jnva"]
+
+[node name="TreeAudio" type="Node"]
+script = ExtResource("1_0jnva")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsw2rarqmetlk"]
+
+[ext_resource type="Script" uid="uid://8k5x76604b8" path="res://root/scenes/scene/game_scene/game_scene.gd" id="1_cc2ll"]
+[ext_resource type="PackedScene" uid="uid://d1qehwioaldlb" path="res://root/scenes/scene/game_scene/game_content/game_content.tscn" id="3_33wd1"]
+[ext_resource type="PackedScene" uid="uid://bo52utxeld0r0" path="res://root/scenes/scene/game_scene/pause_menu/pause_menu.tscn" id="4_bipq8"]
+[ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://root/scenes/component/builder/ui_builder/ui_builder.tscn" id="5_4r42l"]
+[ext_resource type="PackedScene" uid="uid://bea1npdsg7ii1" path="res://root/scenes/scene/menu_scene/options_menu/options_menu.tscn" id="5_4rg8g"]
+
+[node name="GameScene" type="Node"]
+process_mode = 3
+script = ExtResource("1_cc2ll")
+
+[node name="GameContent" parent="." instance=ExtResource("3_33wd1")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_bipq8")]
+unique_name_in_owner = true
+visible = false
+z_index = 1000
+z_as_relative = false
+
+[node name="OptionsMenu" parent="." instance=ExtResource("5_4rg8g")]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+z_index = 1001
+z_as_relative = false
+
+[node name="UiBuilder" parent="." instance=ExtResource("5_4r42l")]
+unique_name_in_owner = true

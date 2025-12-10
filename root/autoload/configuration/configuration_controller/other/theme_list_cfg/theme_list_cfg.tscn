@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkgpwmx03pwtd"]
+
+[ext_resource type="Script" uid="uid://bxktmurmlexlw" path="res://root/autoload/configuration/configuration_controller/other/theme_list_cfg/theme_list_cfg.gd" id="1_de766"]
+
+[node name="ThemeListCfg" type="Node"]
+script = ExtResource("1_de766")

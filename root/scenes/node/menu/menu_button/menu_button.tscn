@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://k5xt8llrybgm"]
+
+[ext_resource type="Script" uid="uid://ux5x10ua2kd" path="res://root/scenes/node/menu/menu_button/menu_button.gd" id="1_aukor"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://root/scenes/component/audio/button_audio/button_audio.tscn" id="2_bjuww"]
+
+[node name="MenuButton" type="Button"]
+offset_top = 92.0
+offset_right = 247.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 32
+text = "              "
+script = ExtResource("1_aukor")
+
+[node name="ButtonAudio" parent="." instance=ExtResource("2_bjuww")]

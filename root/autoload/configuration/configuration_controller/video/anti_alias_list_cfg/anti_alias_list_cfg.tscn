@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://caf75irwvm3y6"]
+
+[ext_resource type="Script" uid="uid://ch7htxx2s4tdx" path="res://root/autoload/configuration/configuration_controller/video/anti_alias_list_cfg/anti_alias_list_cfg.gd" id="1_uwxlw"]
+
+[node name="AntiAliasListCfg" type="Node"]
+script = ExtResource("1_uwxlw")
+config_group = 2
+config_id = "AntiAlias"
