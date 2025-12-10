@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b88kuy67g4l8f"]
+[gd_scene load_steps=6 format=3 uid="uid://b88kuy67g4l8f"]
 
 [ext_resource type="Script" uid="uid://bfr1jpneg2tf3" path="res://root/scenes/scene/menu_scene/main_menu/main_menu.gd" id="1_j1c5u"]
+[ext_resource type="Texture2D" uid="uid://bra2ypcxakup" path="res://root/scenes/scene/menu_scene/main_menu/menubackground.png" id="2_43gs1"]
 [ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://root/scenes/component/control/control_grab_focus/control_grab_focus.tscn" id="3_jhg6y"]
 [ext_resource type="PackedScene" uid="uid://k5xt8llrybgm" path="res://root/scenes/node/menu/menu_button/menu_button.tscn" id="3_u405l"]
 [ext_resource type="PackedScene" uid="uid://cqg5p86vdf7ea" path="res://root/scenes/node/menu/menu_configuration/menu_dropdown_node/menu_dropdown_node.tscn" id="4_0aswu"]
@@ -14,6 +15,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_j1c5u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_43gs1")
+expand_mode = 1
 
 [node name="RootMarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

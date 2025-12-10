@@ -23,7 +23,15 @@ Log/break_on_error=false
 
 [application]
 
-config/description="asdasdasd"
+config/description="Credits
+
+Programming: Coldchise
+
+Game Concept: Cenon Cadano
+
+Art: Christian Marc Vargas
+
+Art & Animation: Coldchise"
 config/version="1.0"
 run/main_scene="res://root/scenes/scene/boot_splash_scene/boot_splash_scene.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
