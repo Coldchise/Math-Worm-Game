@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0q7ifty8us3v"]
 
-[ext_resource type="Shader" path="res://addons/scene_manager/scene_manager.gdshader" id="2"]
+[ext_resource type="Shader" uid="uid://cbjh8qtcmcp3b" path="res://addons/scene_manager/scene_manager.gdshader" id="1_tdsfo"]
 
 [resource]
-shader = ExtResource("2")
+shader = ExtResource("1_tdsfo")
 shader_parameter/cutoff = 1.0
 shader_parameter/smoothness = 0.1
 shader_parameter/color = Vector3(0, 0, 0)

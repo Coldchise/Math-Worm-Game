@@ -23,6 +23,7 @@ Log/break_on_error=false
 
 [application]
 
+config/name="Math Worm Game"
 config/description="Credits
 
 Programming: Coldchise

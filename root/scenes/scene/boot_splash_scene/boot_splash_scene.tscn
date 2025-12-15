@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xqntvyuo85wg"]
 
 [ext_resource type="Script" uid="uid://dnnml4cotsah" path="res://root/scenes/scene/boot_splash_scene/boot_splash_scene.gd" id="1_ycea6"]
-[ext_resource type="PackedScene" uid="uid://0rtfy73niwsg" path="res://assets/Scene/main_character.tscn" id="2_w6evj"]
+[ext_resource type="Texture2D" uid="uid://ca31rmjd6spis" path="res://bootsplash.png" id="2_w6evj"]
 
 [node name="BootSplash" type="Control"]
 layout_mode = 3
@@ -30,4 +30,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="MainCharacter" parent="BootSplashMarginContainer/MarginContainer" instance=ExtResource("2_w6evj")]
+[node name="TextureRect" type="TextureRect" parent="BootSplashMarginContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_w6evj")
