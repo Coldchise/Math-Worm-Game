@@ -13,10 +13,10 @@ var index := 0
 
 # Array form for questions ans answers
 const QUESTIONS_DATA = [
-	{ "question": "1 + 1 = ?", "answer": "2" },
-	{ "question": "2 + 2 = ?", "answer": "4" },
-	{ "question": "3 * 3 = ?", "answer": "9" },
-	{ "question": "sqrt(16) = ?", "answer": "4" }
+	{ "question": "f(x)=2x+1, find f(3)", "answer": "7" },
+	{ "question": "g(x)=3x^2 - 4, find g(-2)", "answer": "8" },
+	{ "question": "f(x)=x-3 and h(x)=x-2, find (f+h)(x)", "answer": "2x-5" },
+	{ "question": "f(x)=x-3 and h(x)=x-2, find (h-f)(x)", "answer": "1"}
 ]
 # Array form for dialog for enemy and character
 var dialogue_sequence = [

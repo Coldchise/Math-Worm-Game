@@ -89,7 +89,7 @@ theme_override_font_sizes/font_size = 20
 
 [node name="Question" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 397.0
+offset_left = 366.0
 offset_top = 9.0
 offset_right = 903.0
 offset_bottom = 116.0
@@ -111,7 +111,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_swmoi")
-theme_override_font_sizes/font_size = 47
+theme_override_font_sizes/font_size = 20
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

@@ -16,13 +16,15 @@ var battle_state = BattleState.PLAYER_TURN
 @onready var dialog_manager = $DialogManager
 @export var enemy: Resource = null
 @onready var game_message = $GameMessage #Future use dont touch
-@onready var paint_root = $PaintRoot # <--- Added Reference
+@onready var paint_root = $PaintRoot # <--- Reference to the Paint Node
 
 func _ready() -> void:
 	paint_root.visible = false # <--- Ensure it starts hidden
 	
 	if enemy == null:
+		# Note: Ensure "Enemy1" is NOT in Project Settings > Autoload, or this line will conflict.
 		enemy = load("res://assets/Script/Enemy1.tres")
+		
 	set_health($EnemyHealthBar, enemy.health, enemy.health)
 	set_health($PlayerHealthBar, State.current_health, State.max_health)
 
@@ -47,11 +49,10 @@ func _on_attack_pressed() -> void:
 	var correct_answer = dialog_manager.get_answer(current_question_index)
 	
 	# IMPORTANT: Start fade out of the question panel before transition
-	# This must happen regardless of correct/wrong answer
-	dialog_manager.fade_out_question() 
+	dialog_manager.fade_out_question()
 	
 	# Lock the state
-	battle_state = BattleState.ENEMY_TURN 
+	battle_state = BattleState.ENEMY_TURN
 	
 	if user_answer == correct_answer:
 		last_player_action_correct = true
@@ -60,7 +61,7 @@ func _on_attack_pressed() -> void:
 	else:
 		last_player_action_correct = false
 		print("Wrong answer: ", user_answer, "! Enemy turn.")
-		# Wrong answer: Enemy immediately speaks "WRONNGGG!!", which triggers _on_dialogue_finished
+		# Wrong answer: Enemy immediately speaks "WRONNGGG!!"
 		dialog_manager.enemy_speak("WRONNGGG!!")
 
 func launch_fireball():
@@ -83,7 +84,7 @@ func on_fireball_collision(_body: Node2D):
 		handle_win()
 		return
 
-	# 2. Correct hit: Enemy speaks "Ouch!", which triggers _on_dialogue_finished
+	# 2. Correct hit: Enemy speaks "Ouch!"
 	dialog_manager.enemy_speak("Ouch!")
 
 # CENTRAL STATE TRANSITION HANDLER
@@ -120,7 +121,7 @@ func _on_dialogue_finished():
 		battle_state = BattleState.PLAYER_TURN
 		print("Player's turn! Current Q Index: ", current_question_index)
 	
-	else: # Handles the end of the *initial* scene dialogue (before the first attack)
+	else: # Handles the end of the *initial* scene dialogue
 		# Set up the first question
 		var initial_question_text = dialog_manager.get_question(current_question_index)
 		dialog_manager.update_question(initial_question_text)
@@ -133,9 +134,9 @@ func _on_defend_pressed() -> void:
 		# Defend logic: skips fireball but still triggers enemy turn with damage
 		print("Defend action: Skip attack, immediately take damage.")
 		battle_state = BattleState.ENEMY_TURN
-		last_player_action_correct = false # Ensures no index advance/shows wrong path dialogue
-		dialog_manager.fade_out_question() # Also fade out question on defend
-		dialog_manager.enemy_speak("You try to hide!") # Or another defense-specific line
+		last_player_action_correct = false 
+		dialog_manager.fade_out_question() 
+		dialog_manager.enemy_speak("You try to hide!") 
 		
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -143,21 +144,17 @@ func set_health(progress_bar, health, max_health):
 	progress_bar.get_node("Label").text = "HP: %d/%d" % [health, max_health]
 
 func handle_win():
-	battle_state = BattleState.ENEMY_TURN # Lock state
+	battle_state = BattleState.ENEMY_TURN 
 	dialog_manager.update_question("VICTORY!")
 	print("Game Over: Player Wins!")
-	# Add custom message display or scene change here
 
 func handle_game_over():
-	battle_state = BattleState.ENEMY_TURN # Lock state
+	battle_state = BattleState.ENEMY_TURN 
 	dialog_manager.update_question("GAME OVER")
 	print("Game Over: Player Lost!")
-	# Add custom message display or scene change here
-
 
 func _on_menu_pressed() -> void:
 	menu_pressed.emit()
 
-
 func _on_canvas_pressed() -> void:
-	paint_root.visible = true # <--- Make the canvas visible
+	paint_root.visible = true # <--- Shows the canvas

@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b1wg6xeqkff8e" path="res://assets/In-Game/SettingsIcon_HoverFocused.png" id="12_mrpu2"]
 [ext_resource type="Texture2D" uid="uid://c4m3uvbce8p4l" path="res://assets/In-Game/canvas_normal.png" id="14_a5cwf"]
 [ext_resource type="Texture2D" uid="uid://crd8l4rrym037" path="res://assets/In-Game/canvas_pressedandhover.png" id="15_f600x"]
-[ext_resource type="PackedScene" uid="uid://d1fwk8rtldbqs" path="res://assets/Scene/paint_root.tscn" id="16_isofw"]
+[ext_resource type="PackedScene" uid="uid://0q7gcx8h0wjg" path="res://assets/gd_paint/paint_root.tscn" id="16_a5cwf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1vkf"]
 texture = ExtResource("9_isofw")
@@ -425,7 +425,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_y2j1b")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_m0pcm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jioym")
 
-[node name="PaintRoot" parent="." instance=ExtResource("16_isofw")]
+[node name="PaintRoot" parent="." instance=ExtResource("16_a5cwf")]
 layout_mode = 1
 
 [connection signal="pressed" from="AttackDefSystem/attack" to="." method="_on_attack_pressed"]
