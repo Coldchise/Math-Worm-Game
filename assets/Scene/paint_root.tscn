@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1fwk8rtldbqs"]
+[gd_scene load_steps=9 format=3 uid="uid://d1fwk8rtldbqs"]
 
+[ext_resource type="Script" uid="uid://c4oos5i2myq4i" path="res://assets/Script/paint_control.gd" id="1_vrfj2"]
 [ext_resource type="Texture2D" uid="uid://cdqq0m3rrlbva" path="res://assets/paint_tools.png" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ksjc"]
@@ -31,6 +32,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vrfj2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="DrawingAreaBG" type="Panel" parent="."]
 layout_mode = 0
@@ -55,7 +65,7 @@ metadata/_edit_use_custom_anchors = false
 [node name="ToolsPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 350.0
-offset_bottom = 600.0
+offset_bottom = 738.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_npkcn")
 metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
@@ -333,3 +343,13 @@ min_size = Vector2i(800, 300)
 access = 2
 filters = PackedStringArray("*.png")
 show_hidden_files = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 9.0
+offset_right = 1272.0
+offset_bottom = 59.0
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

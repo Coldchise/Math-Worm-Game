@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://r18n1ru58r3b"]
+[gd_scene load_steps=29 format=3 uid="uid://r18n1ru58r3b"]
 
 [ext_resource type="Script" uid="uid://l2cuveaacwg4" path="res://assets/Script/battle_scene.gd" id="1_pb7rp"]
 [ext_resource type="PackedScene" uid="uid://i4owajlwsr0a" path="res://assets/Scene/explosion.tscn" id="2_hubqb"]
@@ -10,6 +10,12 @@
 [ext_resource type="FontFile" uid="uid://cfhyd5hmym1s4" path="res://assets/font/Kenney Pixel.ttf" id="8_f600x"]
 [ext_resource type="Texture2D" uid="uid://xye26qwuhrll" path="res://battleSceneButton.png" id="9_isofw"]
 [ext_resource type="FontFile" uid="uid://d12hnvq203mdg" path="res://assets/font/SourceCodePro-Bold.ttf" id="10_y2j1b"]
+[ext_resource type="Texture2D" uid="uid://73alftfn1tk4" path="res://assets/In-Game/SettingsIcon.png" id="11_4u1ey"]
+[ext_resource type="Texture2D" uid="uid://bfpcjgo1r6l70" path="res://assets/In-Game/SettingsIcon_Pressed.png" id="12_dresk"]
+[ext_resource type="Texture2D" uid="uid://b1wg6xeqkff8e" path="res://assets/In-Game/SettingsIcon_HoverFocused.png" id="12_mrpu2"]
+[ext_resource type="Texture2D" uid="uid://c4m3uvbce8p4l" path="res://assets/In-Game/canvas_normal.png" id="14_a5cwf"]
+[ext_resource type="Texture2D" uid="uid://crd8l4rrym037" path="res://assets/In-Game/canvas_pressedandhover.png" id="15_f600x"]
+[ext_resource type="PackedScene" uid="uid://d1fwk8rtldbqs" path="res://assets/Scene/paint_root.tscn" id="16_isofw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1vkf"]
 texture = ExtResource("9_isofw")
@@ -65,6 +71,24 @@ _data = {
 &"RESET": SubResource("Animation_hubqb"),
 &"enemy_damage": SubResource("Animation_pb7rp")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mrpu2"]
+texture = ExtResource("11_4u1ey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy0qq"]
+texture = ExtResource("12_mrpu2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dresk"]
+texture = ExtResource("12_dresk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2j1b"]
+texture = ExtResource("14_a5cwf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0pcm"]
+texture = ExtResource("15_f600x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jioym"]
+texture = ExtResource("15_f600x")
 
 [node name="battlescene" type="Control"]
 layout_mode = 3
@@ -381,5 +405,30 @@ libraries = {
 &"": SubResource("AnimationLibrary_4u1ey")
 }
 
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 399.0
+offset_right = 158.0
+offset_bottom = 519.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mrpu2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xy0qq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dresk")
+
+[node name="Canvas" type="Button" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 387.0
+offset_right = 309.0
+offset_bottom = 525.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_y2j1b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m0pcm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jioym")
+
+[node name="PaintRoot" parent="." instance=ExtResource("16_isofw")]
+layout_mode = 1
+
 [connection signal="pressed" from="AttackDefSystem/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="AttackDefSystem/defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Canvas" to="." method="_on_canvas_pressed"]

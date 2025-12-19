@@ -55,11 +55,15 @@ func _after_leave() -> void:
 # NEW: load your battle scene here
 func _load_battle_scene() -> void:
 	game_content.queue_free()
-
+	
 	var battle_pck: PackedScene = load("res://assets/Scene/battle_scene.tscn")
 	var battle_instance: Node = battle_pck.instantiate()
-	NodeUtils.add_child_front(battle_instance, self)
+	
+	if battle_instance.has_signal("menu_pressed"):
+		battle_instance.menu_pressed.connect(_action_game_pause_menu_button)
 
+	NodeUtils.add_child_front(battle_instance, self)
+	
 	game_content = battle_instance
 
 func _action_game_pause_menu_button() -> void:

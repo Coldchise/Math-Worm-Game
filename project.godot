@@ -68,7 +68,6 @@ Overlay="*res://root/autoload/overlay/overlay.tscn"
 Configuration="*res://root/autoload/configuration/configuration.tscn"
 AssetReference="*res://root/autoload/reference/asset_reference/asset_reference.tscn"
 ResourceReference="*res://root/autoload/reference/resource_reference/resource_reference.tscn"
-Enemy1="*res://assets/Script/Enemy1.tres"
 State="*res://assets/Script/State.gd"
 
 [debug]

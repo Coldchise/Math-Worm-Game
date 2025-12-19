@@ -1,5 +1,7 @@
 extends Control
 
+signal menu_pressed
+
 var fireball_scene: PackedScene = load("res://assets/Scene/fireball.tscn")
 var antattack_scene: PackedScene = load("res://assets/Scene/ant_slash.tscn")
 var current_player_health = 0
@@ -14,8 +16,11 @@ var battle_state = BattleState.PLAYER_TURN
 @onready var dialog_manager = $DialogManager
 @export var enemy: Resource = null
 @onready var game_message = $GameMessage #Future use dont touch
+@onready var paint_root = $PaintRoot # <--- Added Reference
 
 func _ready() -> void:
+	paint_root.visible = false # <--- Ensure it starts hidden
+	
 	if enemy == null:
 		enemy = load("res://assets/Script/Enemy1.tres")
 	set_health($EnemyHealthBar, enemy.health, enemy.health)
@@ -82,10 +87,6 @@ func on_fireball_collision(_body: Node2D):
 	dialog_manager.enemy_speak("Ouch!")
 
 # CENTRAL STATE TRANSITION HANDLER
-# This function handles three flows:
-# 1. Initial dialogue is finished -> Set up first question.
-# 2. Player was correct (fireball collided) -> Attack player, advance index, set next question.
-# 3. Player was wrong (WRONNGGG!!) -> Attack player, keep index, set current question.
 func _on_dialogue_finished():
 	if battle_state == BattleState.ENEMY_TURN:
 		
@@ -152,3 +153,11 @@ func handle_game_over():
 	dialog_manager.update_question("GAME OVER")
 	print("Game Over: Player Lost!")
 	# Add custom message display or scene change here
+
+
+func _on_menu_pressed() -> void:
+	menu_pressed.emit()
+
+
+func _on_canvas_pressed() -> void:
+	paint_root.visible = true # <--- Make the canvas visible
