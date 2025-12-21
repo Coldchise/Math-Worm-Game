@@ -17,8 +17,19 @@ var battle_state = BattleState.PLAYER_TURN
 @export var enemy: Resource = null
 @onready var game_message = $GameMessage #Future use dont touch
 @onready var paint_root = $PaintRoot # <--- Reference to the Paint Node
+@onready var fade_overlay = $ColorRect2 # <--- Reference to your Fade Overlay
 
 func _ready() -> void:
+	# --- FADE IN EFFECT START ---
+	# Make sure the black overlay is visible and fully opaque (solid black)
+	fade_overlay.visible = true
+	fade_overlay.color.a = 1.0
+	
+	# Create a tween to fade the alpha to 0 (transparent) over 1 second
+	var tween = create_tween()
+	tween.tween_property(fade_overlay, "color:a", 0.0, 1.0)
+	# --- FADE IN EFFECT END ---
+
 	paint_root.visible = false # <--- Ensure it starts hidden
 	
 	if enemy == null:
@@ -134,22 +145,22 @@ func _on_defend_pressed() -> void:
 		# Defend logic: skips fireball but still triggers enemy turn with damage
 		print("Defend action: Skip attack, immediately take damage.")
 		battle_state = BattleState.ENEMY_TURN
-		last_player_action_correct = false 
-		dialog_manager.fade_out_question() 
-		dialog_manager.enemy_speak("You try to hide!") 
-		
+		last_player_action_correct = false
+		dialog_manager.fade_out_question()
+		dialog_manager.enemy_speak("You try to hide!")
+
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
 	progress_bar.max_value = max_health
 	progress_bar.get_node("Label").text = "HP: %d/%d" % [health, max_health]
 
 func handle_win():
-	battle_state = BattleState.ENEMY_TURN 
+	battle_state = BattleState.ENEMY_TURN
 	dialog_manager.update_question("VICTORY!")
 	print("Game Over: Player Wins!")
 
 func handle_game_over():
-	battle_state = BattleState.ENEMY_TURN 
+	battle_state = BattleState.ENEMY_TURN
 	dialog_manager.update_question("GAME OVER")
 	print("Game Over: Player Lost!")
 

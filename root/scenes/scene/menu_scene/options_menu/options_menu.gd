@@ -2,7 +2,7 @@ class_name OptionsMenu
 extends Control
 ## Holds options scenes and manages their transitions (listens to menu button signal).
 ## [br][br]
-## Original File MIT License Copyright (c) 2024 TinyTakinTeller
+
 
 var _current_menu: OptionsContainer = null
 

@@ -1,10 +1,5 @@
-# NOTE: Additional examples: (replace "GameContent" child scene)
-# - 2D Incremental Clicker (default): "scenes/scene/game_scene/game_content/game_content.tscn"
-# - 3D First Person Controller: "artifacts/example_3d_fp_controller/scenes/.../game_content.tscn"
 class_name GameScene
 extends Node
-## Replace "GameContent" child scene with your own. (Keep unique name.)
-## You can modify [_after_unpause], [_after_pause], [_after_leave] functions in this script.
 
 @export_group("Menu Scene")
 @export var scene: SceneManagerEnum.Scene = SceneManagerEnum.Scene.MENU_SCENE
@@ -13,10 +8,60 @@ extends Node
 @onready var game_content: Node = $GameContent
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var options_menu: OptionsMenu = %OptionsMenu
-
 @onready var ui_builder: UiBuilder = %UiBuilder
 
-# Esc key shortcut toggles pause menu or exits from options via back button
+# --- LOAD YOUR SCENES HERE ---
+var trailer_scene_path = "res://assets/Scene/Trailer.tscn" 
+var battle_scene_path = "res://assets/Scene/battle_scene.tscn" 
+
+func _ready() -> void:
+	_load_intro_sequence()
+
+	ui_builder.build()
+	_connect_signals()
+	LogWrapper.debug(self, "Ready.")
+
+# 1. Function to load the Trailer
+func _load_intro_sequence() -> void:
+	# Remove placeholder content if it exists
+	if is_instance_valid(game_content):
+		game_content.queue_free()
+	
+	var trailer_pck = load(trailer_scene_path)
+	var trailer_instance = trailer_pck.instantiate()
+	
+	# Connect the signal we created in Step 1
+	if trailer_instance.has_signal("video_finished"):
+		trailer_instance.video_finished.connect(_on_intro_finished)
+	
+	# Add to scene
+	NodeUtils.add_child_front(trailer_instance, self)
+	game_content = trailer_instance
+
+# 2. Function called when Trailer says it's done
+func _on_intro_finished():
+	# Remove the Trailer
+	game_content.queue_free()
+	
+	# Load the Battle
+	_load_battle_scene()
+
+# 3. Function to load the Battle
+func _load_battle_scene() -> void:
+	var battle_pck = load(battle_scene_path)
+	var battle_instance = battle_pck.instantiate()
+	
+	# Connect your menu signal
+	if battle_instance.has_signal("menu_pressed"):
+		battle_instance.menu_pressed.connect(_action_game_pause_menu_button)
+
+	NodeUtils.add_child_front(battle_instance, self)
+	game_content = battle_instance
+	
+	# Optional: If you have a fade-in on the battle scene, it will play now automatically.
+
+# ... [Keep the rest of your pause/input logic exactly as it was] ...
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game_pause"):
 		if get_tree().paused:
@@ -26,14 +71,6 @@ func _input(_event: InputEvent) -> void:
 				_action_options_back_menu_button()
 		else:
 			_action_game_pause_menu_button()
-
-func _ready() -> void:
-	# Load your custom battle scene instead of the template clicker
-	_load_battle_scene()
-
-	ui_builder.build()
-	_connect_signals()
-	LogWrapper.debug(self, "Ready.")
 
 func _after_pause() -> void:
 	if "player" in game_content and game_content.player is Player:
@@ -51,20 +88,6 @@ func _after_unpause() -> void:
 
 func _after_leave() -> void:
 	pass
-
-# NEW: load your battle scene here
-func _load_battle_scene() -> void:
-	game_content.queue_free()
-	
-	var battle_pck: PackedScene = load("res://assets/Scene/battle_scene.tscn")
-	var battle_instance: Node = battle_pck.instantiate()
-	
-	if battle_instance.has_signal("menu_pressed"):
-		battle_instance.menu_pressed.connect(_action_game_pause_menu_button)
-
-	NodeUtils.add_child_front(battle_instance, self)
-	
-	game_content = battle_instance
 
 func _action_game_pause_menu_button() -> void:
 	game_content.visible = true

@@ -1,12 +1,4 @@
 extends Node
-## The SoundManager is responsible for all sound events in your game.
-##
-## It manages pools of 1D, 2D, and 3D audio stream players, which can be used
-## for single-shot sound events, or reserved by scripts for repetitive & exclusive use.
-## Sound events can contain many variations which will be chosen and played at random.
-## Playback can be achieved both sequentially and polyphonically.
-##
-## @tutorial(View example scenes): https://github.com/hugemenace/resonate/tree/main/examples
 
 
 const ResonateSettings = preload("../shared/resonate_settings.gd")

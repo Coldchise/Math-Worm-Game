@@ -50,11 +50,21 @@ func _init_action_handler() -> void:
 		}
 	)
 
-
 func _action_play_save_file_menu_button() -> void:
 	var menu_save_file: MenuSaveFile = get_toggled_save_file()
 	if menu_save_file == null:
 		return
+
+	# --- NEW CODE START ---
+	# Try to find the "Music" bus. If it doesn't exist, it defaults to Master (0).
+	var music_bus_index := AudioServer.get_bus_index("Music")
+	
+	# Only mute if we actually found a specific "Music" bus (index > 0)
+	# This prevents accidental muting of Master if "Music" is missing.
+	if music_bus_index > 0:
+		AudioServer.set_bus_mute(music_bus_index, true)
+	# --- NEW CODE END ---
+
 	process_mode = PROCESS_MODE_DISABLED
 	Data.select_save_file(menu_save_file.index)
 	SceneManagerWrapper.change_scene(scene, scene_manager_options_id)

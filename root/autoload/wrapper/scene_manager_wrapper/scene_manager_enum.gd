@@ -3,7 +3,6 @@ class_name SceneManagerEnum
 ## Tracks values related to [SceneManager] and [SceneManagerWrapper], i.e. maktoobgar's addon: [br]
 ## - https://github.com/maktoobgar/scene_manager
 ## [br][br]
-## Original File MIT License Copyright (c) 2024 TinyTakinTeller
 
 ## Tracks "Scenes" (relevant .tscn files) used in [SceneManager] and [SceneManagerWrapper].
 # Special scenes: NULL, BACK, RELOAD, REFRESH, RESTART, EXIT, QUIT

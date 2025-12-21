@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://pfhig206l31y"]
+
+[ext_resource type="Script" uid="uid://dhbg304lxydo0" path="res://assets/Script/trailer.gd" id="1_c55kj"]
+[ext_resource type="VideoStream" uid="uid://6ja5wyq5kc" path="res://assets/Trailer.ogv" id="2_c55kj"]
+
+[node name="Trailer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c55kj")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.334, 0.334)
+stream = ExtResource("2_c55kj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
