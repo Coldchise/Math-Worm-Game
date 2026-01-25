@@ -8,6 +8,7 @@ The player answers math questions to attack or defend, while enemies react diffe
 - **Christian Vergara** – Game developer / programmer / art.  
 - **Cen Cadano** – Concept / project lead.
 - **Andrew San Antonio** - Game Programmer.
+- **Christian Marc Vargas** - Game Programmer.
 
 This repository also serves as a record of who contributed what to the project via Git commit history.
 
