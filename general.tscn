@@ -1,0 +1,404 @@
+[gd_scene load_steps=2 format=3 uid="uid://vq7t1mhliabt"]
+
+[ext_resource type="Script" uid="uid://bkpov7svdopbq" path="res://general.gd" id="1_h6m57"]
+
+[node name="General" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_h6m57")
+
+[node name="Screen" type="Panel" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_left = -5.0
+offset_right = 1275.0
+offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5019608, 0.18039216, 0.03137255, 1)
+
+[node name="full" type="VBoxContainer" parent="Screen/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="displaycontainer" type="VBoxContainer" parent="Screen/ColorRect/full"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen/ColorRect/full/displaycontainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1270
+theme_override_constants/margin_top = 53
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/ColorRect/full/displaycontainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PreArea" type="Label" parent="Screen/ColorRect/full/displaycontainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Area" type="Label" parent="Screen/ColorRect/full/displaycontainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "88"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="AllBtn" type="VBoxContainer" parent="Screen/ColorRect/full"]
+layout_mode = 2
+
+[node name="topbtn" type="GridContainer" parent="Screen/ColorRect/full/AllBtn"]
+layout_mode = 2
+columns = 8
+
+[node name="Btn2nd" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "2nd"
+
+[node name="OpenParenthesis" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "("
+
+[node name="ClosedParenthesis" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = ")"
+
+[node name="Percent" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "%"
+
+[node name="MemoryClear" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "mc"
+
+[node name="MemoryPlus" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "m+"
+
+[node name="MemoryMinus" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "m-"
+
+[node name="MemoryRecall" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "mr"
+
+[node name="Reciprocal" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "1/x"
+
+[node name="Square" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "x²"
+
+[node name="Cube" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "x³"
+
+[node name="Y^x" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "y^x"
+
+[node name="clear" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "c"
+
+[node name="delete" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "del"
+
+[node name="DivisionSign" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "/"
+
+[node name="MultiplySign" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "×"
+
+[node name="Factorial" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "x!"
+
+[node name="Squareroot" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "√"
+
+[node name="Cuberoot" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "³√"
+
+[node name="Logarithm" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "log"
+
+[node name="Btn7" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "7"
+
+[node name="Btn8" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "8"
+
+[node name="Btn9" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "9"
+
+[node name="MinusSign" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "-"
+
+[node name="Sine" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "sin"
+
+[node name="Cosine" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "cos"
+
+[node name="Tangent" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "tan"
+
+[node name="NaturalLog" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "ln"
+
+[node name="Btn4" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "4"
+
+[node name="Btn5" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "5"
+
+[node name="Btn6" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "6"
+
+[node name="PlusSign" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "+"
+
+[node name="HyperbolicSine" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "sinh"
+
+[node name="HyperbolicCosine" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "cosh"
+
+[node name="HyperbolicTangent" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "tanh"
+
+[node name="ExponentialFunction" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "e^x"
+
+[node name="Btn1" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "1"
+
+[node name="Btn2" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "2"
+
+[node name="Btn3" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "3"
+
+[node name="Fraction" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
+custom_minimum_size = Vector2(156, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "a/b
+"
+
+[node name="bottombtn" type="HBoxContainer" parent="Screen/ColorRect/full/AllBtn"]
+layout_mode = 2
+
+[node name="Radian" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(156, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Rad"
+
+[node name="Pi" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(156, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "π"
+
+[node name="EnterExponent" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(156, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "EE"
+
+[node name="RandomNumbers" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(156, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Rand"
+
+[node name="Btn0" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(156, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "0"
+
+[node name="Btnpoint" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(156, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "."
+
+[node name="EqualSign" type="Button" parent="Screen/ColorRect/full/AllBtn/bottombtn"]
+custom_minimum_size = Vector2(318, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "="
+
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn2nd" to="." method="_on_symbol_pressed" binds= ["+/-"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/OpenParenthesis" to="." method="_on_symbol_pressed" binds= ["("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/ClosedParenthesis" to="." method="_on_symbol_pressed" binds= [")"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Percent" to="." method="_on_symbol_pressed" binds= ["%"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MemoryClear" to="." method="_on_symbol_pressed" binds= ["mc"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MemoryPlus" to="." method="_on_symbol_pressed" binds= ["m+"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MemoryMinus" to="." method="_on_symbol_pressed" binds= ["m-"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MemoryRecall" to="." method="_on_symbol_pressed" binds= ["mr"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Reciprocal" to="." method="_on_symbol_pressed" binds= ["^(-1)"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Square" to="." method="_on_symbol_pressed" binds= ["^2"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Cube" to="." method="_on_symbol_pressed" binds= ["^3"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Y^x" to="." method="_on_symbol_pressed" binds= ["^"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/clear" to="." method="_on_symbol_pressed" binds= ["ac"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/delete" to="." method="_on_symbol_pressed" binds= ["del"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/DivisionSign" to="." method="_on_symbol_pressed" binds= ["/"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MultiplySign" to="." method="_on_symbol_pressed" binds= [""]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Factorial" to="." method="_on_symbol_pressed" binds= ["!"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Squareroot" to="." method="_on_symbol_pressed" binds= ["sqrt("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Cuberoot" to="." method="_on_symbol_pressed" binds= ["cbrt("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Logarithm" to="." method="_on_symbol_pressed" binds= ["log("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn7" to="." method="_on_number_pressed" binds= [7]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn8" to="." method="_on_number_pressed" binds= [8]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn9" to="." method="_on_number_pressed" binds= [9]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MinusSign" to="." method="_on_symbol_pressed" binds= ["-"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Sine" to="." method="_on_symbol_pressed" binds= ["sin("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Cosine" to="." method="_on_symbol_pressed" binds= ["cos("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Tangent" to="." method="_on_symbol_pressed" binds= ["tan("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/NaturalLog" to="." method="_on_symbol_pressed" binds= ["ln("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn4" to="." method="_on_number_pressed" binds= [4]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn5" to="." method="_on_number_pressed" binds= [5]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn6" to="." method="_on_number_pressed" binds= [6]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/PlusSign" to="." method="_on_symbol_pressed" binds= ["+"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/HyperbolicSine" to="." method="_on_symbol_pressed" binds= ["sinh("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/HyperbolicCosine" to="." method="_on_symbol_pressed" binds= ["cosh("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/HyperbolicTangent" to="." method="_on_symbol_pressed" binds= ["tanh("]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/ExponentialFunction" to="." method="_on_symbol_pressed" binds= ["e^"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn1" to="." method="_on_number_pressed" binds= [1]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn2" to="." method="_on_number_pressed" binds= [2]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn3" to="." method="_on_number_pressed" binds= [3]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Fraction" to="." method="_on_symbol_pressed" binds= ["a/b"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/Radian" to="." method="_on_symbol_pressed" binds= ["Rad"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/Pi" to="." method="_on_symbol_pressed" binds= ["Pi"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/EnterExponent" to="." method="_on_symbol_pressed" binds= ["EE"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/RandomNumbers" to="." method="_on_symbol_pressed" binds= ["Rand"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/Btn0" to="." method="_on_number_pressed" binds= [0]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/Btnpoint" to="." method="_on_symbol_pressed" binds= ["."]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/bottombtn/EqualSign" to="." method="_on_symbol_pressed" binds= ["="]]
