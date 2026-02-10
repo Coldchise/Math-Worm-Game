@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://r18n1ru58r3b"]
+[gd_scene load_steps=33 format=3 uid="uid://r18n1ru58r3b"]
 
 [ext_resource type="Script" uid="uid://l2cuveaacwg4" path="res://assets/Script/battle_scene.gd" id="1_pb7rp"]
 [ext_resource type="PackedScene" uid="uid://i4owajlwsr0a" path="res://assets/Scene/explosion.tscn" id="2_hubqb"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c4m3uvbce8p4l" path="res://assets/In-Game/canvas_normal.png" id="14_a5cwf"]
 [ext_resource type="Texture2D" uid="uid://crd8l4rrym037" path="res://assets/In-Game/canvas_pressedandhover.png" id="15_f600x"]
 [ext_resource type="PackedScene" uid="uid://0q7gcx8h0wjg" path="res://assets/gd_paint/paint_root.tscn" id="16_a5cwf"]
+[ext_resource type="Texture2D" uid="uid://dobo0gvbyhjre" path="res://assets/Calculator/Calculator-Image.png" id="16_f600x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1vkf"]
 texture = ExtResource("9_isofw")
@@ -89,6 +90,15 @@ texture = ExtResource("15_f600x")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jioym"]
 texture = ExtResource("15_f600x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isofw"]
+texture = ExtResource("16_f600x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0i1f1"]
+texture = ExtResource("16_f600x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frlji"]
+texture = ExtResource("16_f600x")
 
 [node name="battlescene" type="Control"]
 layout_mode = 3
@@ -312,6 +322,8 @@ offset_bottom = 0.0
 
 [node name="KeyPad" parent="." instance=ExtResource("7_a5cwf")]
 layout_mode = 1
+offset_top = 16.0
+offset_bottom = 16.0
 
 [node name="AttackDefSystem" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -425,20 +437,22 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_y2j1b")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_m0pcm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jioym")
 
-[node name="PaintRoot" parent="." instance=ExtResource("16_a5cwf")]
-layout_mode = 1
+[node name="Calculator" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 388.0
+offset_right = 455.0
+offset_bottom = 526.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_isofw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0i1f1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_frlji")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="PaintRoot" parent="." instance=ExtResource("16_a5cwf")]
+visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="AttackDefSystem/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="AttackDefSystem/defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Canvas" to="." method="_on_canvas_pressed"]
+[connection signal="pressed" from="Calculator" to="." method="_on_calculator_pressed"]

@@ -2,15 +2,19 @@ extends Control
 
 signal menu_pressed
 
+
 var fireball_scene: PackedScene = load("res://assets/Scene/fireball.tscn")
 var antattack_scene: PackedScene = load("res://assets/Scene/ant_slash.tscn")
 var current_player_health = 0
 var current_enemy_health = 0
 var current_question_index = 0
 var last_player_action_correct = false
+var calculator_scene = preload("res://general.tscn")
+var calculator_instance = null
 
 enum BattleState { PLAYER_TURN, ENEMY_TURN }
 var battle_state = BattleState.PLAYER_TURN
+
 
 @onready var key_pad = $KeyPad
 @onready var dialog_manager = $DialogManager
@@ -169,3 +173,12 @@ func _on_menu_pressed() -> void:
 
 func _on_canvas_pressed() -> void:
 	paint_root.visible = true # <--- Shows the canvas
+	
+func _on_calculator_pressed():
+	if calculator_instance == null:
+		calculator_instance = calculator_scene.instantiate()
+		add_child(calculator_instance)
+	else:
+		# Optional: if toggle from battle button itself
+		calculator_instance.queue_free()
+		calculator_instance = null
