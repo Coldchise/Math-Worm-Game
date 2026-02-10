@@ -7,6 +7,10 @@ var total = 0
 var last_symbol = ""
 var expression := ""
 var current_input := ""
+var just_cleared = true
+var just_evaluated = false
+var radians_mode := true
+var just_second = false
 
 func _ready():
 	randomize()
@@ -21,9 +25,13 @@ func update_display():
 		display.text = expression + current_input
 		
 func _on_number_pressed(number:int) -> void:
-	current_input += str(number)
+	if just_cleared or display.text == "0" or just_evaluated:
+		current_input = str(number)
+		just_cleared = false
+		just_evaluated = false
+	else:
+		current_input += str(number)
 	update_display()
-		
 func _on_symbol_pressed(symbol:String) -> void:
 	print(symbol)
 	match(symbol):
@@ -43,7 +51,7 @@ func _on_symbol_pressed(symbol:String) -> void:
 			expression += symbol
 			current_input = ""
 			update_display()
-		"×":
+		"*":
 			if expression == "":
 				expression = current_input
 			do_math()
@@ -63,8 +71,22 @@ func _on_symbol_pressed(symbol:String) -> void:
 			do_math()
 			display.text = str(total)
 			current_input = str(total)
-			expression = "" 
+			expression = ""
 			last_symbol = ""
+			just_evaluated = true
+		"+/-":
+			if current_input != "":
+				# flip the sign of the current input
+				if current_input.begins_with("-"):
+					current_input = current_input.substr(1)  # remove the minus
+				else:
+					current_input = "-" + current_input     # add the minus
+			else:
+				# if no input, flip the total
+				total = -total
+				current_input = str(total)
+			update_display()
+
 		"^(-1)":
 			if expression == "":
 				expression = current_input
@@ -195,45 +217,28 @@ func _on_symbol_pressed(symbol:String) -> void:
 			current_input = ""
 			update_display()
 		"Rad":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
+			radians_mode = !radians_mode  # toggle the mode
+			pre_area.text = "RAD" if radians_mode else "DEG"
 			current_input = ""
-			update_display()
+			expression = ""
+			last_symbol = ""
+			just_cleared = true
+
 		"Pi":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
+			current_input = str(PI)
 			update_display()
 		"EE":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
-			update_display()
+			if current_input != "":
+				total = float(current_input)
+				last_symbol = "EE"
+				current_input = ""
+				expression += "e"
 		"Rand":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
-			update_display()
-		"2nd":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
-			update_display()
+			total = randi() % 100
+			display.text = str(total)
+			current_input = str(total)
+			expression = ""
+			last_symbol = ""
 		"(":
 			if expression == "":
 				expression = current_input
@@ -290,44 +295,48 @@ func _on_symbol_pressed(symbol:String) -> void:
 			expression += symbol
 			current_input = ""
 			update_display()
-		"c":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
+		"ac":
+			display.text = "0"
+			total = 0
+			last_symbol = ""
 			current_input = ""
-			update_display()
+			expression = ""
+			just_cleared = true
 		"del":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
-			update_display()
+			if display.text.length() > 1:
+				display.text = display.text.left(display.text.length() - 1)
+			else:
+				display.text = "0"
 		"a/b":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
+			if current_input != "":
+				# Check if input is fraction (has "/")
+				if "/" in current_input:
+					var parts = current_input.split("/")
+					if parts.size() == 2:
+						var numerator = int(parts[0])
+						var denominator = int(parts[1])
+						var dec = float(numerator) / float(denominator)
+						display.text = str(dec)
+						current_input = str(dec)
+				# Otherwise assume decimal
+				else:
+					var dec = float(current_input)
+					var frac = decimal_to_fraction(dec)
+					display.text = str(frac[0]) + "/" + str(frac[1])
+					current_input = display.text
 			update_display()
 		".":
-			if expression == "":
-				expression = current_input
-			do_math()
-			last_symbol = symbol
-			expression += symbol
-			current_input = ""
+			if "." not in current_input:
+				if current_input == "":
+					current_input = "0."
+				else:
+					current_input += "."
 			update_display()
 	print(symbol)
 
 func do_math():
-	var n: float
+	var n: float = 0.0
 
-	# Determine which value to operate on
 	if current_input != "":
 		n = float(current_input)
 	elif last_symbol in ["^2","^3","^(-1)","!","sqrt()","cbrt()","sin(","cos(","tan(","ln(","log(","sinh(","cosh(","tanh(","e^"]:
@@ -342,20 +351,20 @@ func do_math():
 	match last_symbol:
 		"":  # first input
 			total = n
-
-		# Binary
 		"+":
 			total += n
 		"-":
 			total -= n
-		"×":
+		"*":
 			total *= n
 		"/":
 			if n != 0:
+				total = float(total)
 				total /= n
 			else:
 				display.text = "Error"
-				total = 0
+				total = str(total)
+				total = "Error"
 		"^":
 			total = pow(total, n)
 
@@ -390,11 +399,18 @@ func do_math():
 			else:
 				total = -pow(-n, 1.0/3.0)
 		"sin(":
+			if not radians_mode:
+				n = deg_to_rad(n)  # convert degrees to radians
 			total = sin(n)
 		"cos(":
+			if not radians_mode:
+				n = deg_to_rad(n)
 			total = cos(n)
 		"tan(":
+			if not radians_mode:
+				n = deg_to_rad(n)
 			total = tan(n)
+		
 		"ln(":
 			if n > 0:
 				total = log(n)
@@ -416,15 +432,36 @@ func do_math():
 		"e^":
 			total = exp(n)
 		"Pi":
-			total = PI
+			current_input = str(PI)
+			expression = ""
+			update_display()
 		"Rand":
 			total = randi() % 100  # random int from 0 to 99
+		"EE":
+			if current_input != "":
+		# total × 10^current_input
+				total = total * pow(10, float(current_input))
+		"a/b":
+			if current_input != "":
+				n = float(current_input)
+				if n != 0:
+					total = 1.0 / n
+				else:
+					display.text = "Error"
+					total = 0
+			else:
+				# kung walang input, apply sa total
+				if total != 0:
+					total = 1.0 / total
+				else:
+					display.text = "Error"
+					total = 0
 
-		
 		_:
 			print("Unknown operation: ", last_symbol)
+		
 
-	# Reset current_input for next entry
+
 	current_input = ""
 	update_display()
 	print("total: ", total)
@@ -434,3 +471,17 @@ func factorial(n: int) -> int:
 	if n <= 1:
 		return 1
 	return n * factorial(n - 1)
+	
+func decimal_to_fraction(x: float, max_denominator: int = 1000) -> Array:
+	var closest_numerator = 0
+	var closest_denominator = 1
+	var min_error = abs(x - float(closest_numerator)/closest_denominator)
+
+	for d in range(1, max_denominator+1):
+		var n = round(x * d)
+		var error = abs(x - float(n)/d)
+		if error < min_error:
+			min_error = error
+			closest_numerator = n
+			closest_denominator = d
+	return [closest_numerator, closest_denominator]

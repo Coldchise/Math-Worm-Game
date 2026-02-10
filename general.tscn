@@ -355,7 +355,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 55
 text = "="
 
-[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn2nd" to="." method="_on_symbol_pressed" binds= ["2nd"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Btn2nd" to="." method="_on_symbol_pressed" binds= ["+/-"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/OpenParenthesis" to="." method="_on_symbol_pressed" binds= ["("]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/ClosedParenthesis" to="." method="_on_symbol_pressed" binds= [")"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Percent" to="." method="_on_symbol_pressed" binds= ["%"]]
@@ -367,7 +367,7 @@ text = "="
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Square" to="." method="_on_symbol_pressed" binds= ["^2"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Cube" to="." method="_on_symbol_pressed" binds= ["^3"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/Y^x" to="." method="_on_symbol_pressed" binds= ["^"]]
-[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/clear" to="." method="_on_symbol_pressed" binds= ["c"]]
+[connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/clear" to="." method="_on_symbol_pressed" binds= ["ac"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/delete" to="." method="_on_symbol_pressed" binds= ["del"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/DivisionSign" to="." method="_on_symbol_pressed" binds= ["/"]]
 [connection signal="pressed" from="Screen/ColorRect/full/AllBtn/topbtn/MultiplySign" to="." method="_on_symbol_pressed" binds= [""]]
