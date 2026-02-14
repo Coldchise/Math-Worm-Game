@@ -19,15 +19,20 @@ var battle_state = BattleState.PLAYER_TURN
 @onready var key_pad = $KeyPad
 @onready var dialog_manager = $DialogManager
 @export var enemy: Resource = null
-@onready var game_message = $GameMessage #Future use dont touch
+# @onready var game_message = $GameMessage Future use dont touch
 @onready var paint_root = $PaintRoot # <--- Reference to the Paint Node
-@onready var fade_overlay = $ColorRect2 # <--- Reference to your Fade Overlay
+@onready var fade_overlay = get_node_or_null("ColorRect2") # <--- Reference to your Fade Overlay
 
 func _ready() -> void:
 	# --- FADE IN EFFECT START ---
 	# Make sure the black overlay is visible and fully opaque (solid black)
-	fade_overlay.visible = true
-	fade_overlay.color.a = 1.0
+	if fade_overlay:
+		fade_overlay.visible = true
+		fade_overlay.color.a = 1.0
+		var tween = create_tween()
+		tween.tween_property(fade_overlay, "color:a", 0.0, 1.0)
+	else:
+		print("Warning: ColorRect2 (fade_overlay) not found in battle_scene.gd")
 	
 	# Create a tween to fade the alpha to 0 (transparent) over 1 second
 	var tween = create_tween()
