@@ -298,7 +298,7 @@ theme_override_font_sizes/font_size = 55
 text = "2"
 
 [node name="Btn3" type="Button" parent="Screen/ColorRect/full/AllBtn/topbtn"]
-custom_minimum_size = Vector2(156, 75)
+custom_minimum_size = Vector2(156, 55)
 layout_mode = 2
 theme_override_font_sizes/font_size = 55
 text = "3"
